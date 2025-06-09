@@ -4,12 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Restaurante Topzera</title>
-
+    <title>Cantinho do Ipiranga</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
@@ -19,8 +17,6 @@
 
     <?php
     // Definição do array de itens do cardápio
-    // Você pode adicionar mais itens aqui, ou modificar os existentes.
-    // Lembre-se de que o 'id' é apenas um identificador, não precisa ser sequencial.
     $menuItems = [
         [
             'id' => 1,
@@ -70,7 +66,7 @@
     <header class="hero">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Restaurante Topzera</a>
+                <a class="navbar-brand" href="#">Cantinho do Ipiranga</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -83,7 +79,7 @@
                             <a class="nav-link" href="#sobre-nos">Sobre Nós</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://www.instagram.com/seuinstagram" target="_blank">Instagram</a>
+                            <a class="nav-link" href="https://www.instagram.com/cantinhodoipirangaoficial/" target="_blank">Instagram</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#menu">Cardápio</a>
@@ -95,10 +91,6 @@
                 </div>
             </div>
         </nav>
-
-        <video autoplay muted loop playsinline>
-            <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4" />
-        </video>
         <div class="hero-content">
             <h1>Venha viver uma experiência gastronômica</h1>
             <p>O melhor da culinária com sabor e elegância</p>
@@ -157,12 +149,19 @@
         <div class="container text-center">
             <p>Siga-nos nas redes sociais</p>
             <div class="social-icons mb-3">
-                <a href="#" class="text-white mx-2"><span>📷</span></a>
-                <a href="#" class="text-white mx-2"><span>📘</span></a>
-                <a href="#" class="text-white mx-2"><span>📞</span></a>
-            </div>
-            <iframe src="https://maps.google.com/maps?q=restaurante%20em%20s%C3%A3o%20paulo&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-            <p class="mt-3 mb-0">© 2025 Restaurante Topzera</p>
+                <a href="https://www.instagram.com/cantinhodoipirangaoficial/" target="_blank" class="text-white mx-2">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" class="text-white mx-2">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="tel:+55XXYYYYZZZZZ" class="text-white mx-2">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+                </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8750.714430228954!2d-46.61933132388312!3d-23.588314362584498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5bdc9713efa7%3A0x2cebae0eeb7ea658!2sCantinho%20do%20Ipiranga!5e1!3m2!1spt-BR!2sbr!4v1749476857906!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <p>R. da Imprensa, 310 - Ipiranga, São Paulo - SP, 04265-000</p>
+            <p class="mt-3 mb-0">© 2025 Cantinho do Ipiranga</p>
         </div>
     </footer>
 
