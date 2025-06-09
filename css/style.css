@@ -35,18 +35,30 @@ header.hero {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding-top: 56px; 
-    background-image: url('../imagens/backfundo.png'); 
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
+    padding-top: 56px;
+}
+
+header.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../imagens/backfundo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.4); 
+    background-blend-mode: overlay;
+    z-index: 0;
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
     padding: 0 1rem;
-    margin-top: -56px; 
+    margin-top: -56px;
 }
 
 .hero-content h1 {
@@ -63,7 +75,7 @@ header.hero {
 }
 
 .btn-primary {
-    background-color: var(--primary-color) !important; 
+    background-color: var(--primary-color) !important;
     border-color: var(--primary-color) !important;
     color: var(--white);
     padding: 0.75rem 2rem;
@@ -87,7 +99,7 @@ header.hero {
 .navbar-nav .nav-link {
     font-size: 1.1rem;
     padding: 0.5rem 0;
-    margin-left: 2rem; 
+    margin-left: 2rem;
     transition: color 0.3s ease-in-out;
 }
 
@@ -108,7 +120,7 @@ header.hero {
 
 .card-img-top {
     width: 100%;
-    height: 180px; 
+    height: 180px;
     object-fit: cover;
 }
 
@@ -182,4 +194,27 @@ footer iframe {
     .ifood-float img {
         width: 50px;
     }
+}
+
+/* Estilo específico para o cabeçalho da página de Contato/Reserva */
+header.hero-contact {
+    position: relative; 
+    height: auto; 
+    min-height: 180px; 
+    background-color: var(--dark); 
+    color: var(--white);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px; 
+    padding-bottom: 20px; 
+    box-shadow: 0 2px 5px var(--shadow); 
+}
+
+header.hero-contact::before {
+    content: none; 
+
+header.hero-contact .hero-content {
+    margin-top: 0; 
 }

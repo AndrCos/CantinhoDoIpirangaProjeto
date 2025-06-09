@@ -23,7 +23,7 @@
             'nome' => 'Hambúrguer Artesanal',
             'descricao' => 'Pão brioche, carne suculenta e queijo derretido.',
             'preco' => 'R$ 35,00',
-            'imagem' => 'https://source.unsplash.com/400x300/?burger' // Imagens de exemplo Unsplash
+            'imagem' => 'https://source.unsplash.com/400x300/?burger'
         ],
         [
             'id' => 2,
@@ -85,7 +85,7 @@
                             <a class="nav-link" href="#menu">Cardápio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contato">Contato</a>
+                            <a class="nav-link" href="reserva.php">Reserva</a>
                         </li>
                     </ul>
                 </div>
@@ -116,29 +116,6 @@
         </div>
     </section>
 
-    <section id="contato" class="container py-5">
-        <h2 class="text-center mb-4">Entre em Contato</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6">
-                <form action="contato.php" method="POST">
-                    <div class="mb-3">
-                        <label for="nome" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="nome" name="nome" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">E-mail</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="mensagem" class="form-label">Mensagem</label>
-                        <textarea class="form-control" id="mensagem" name="mensagem" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-lg w-100">Enviar Mensagem</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
     <div class="ifood-float">
         <a href="https://www.ifood.com.br" target="_blank">
             <img src="imagens/iFood-Logo-site.png" alt="iFood" />
@@ -158,15 +135,14 @@
                 <a href="tel:+55XXYYYYZZZZZ" class="text-white mx-2">
                     <i class="fa-solid fa-phone"></i>
                 </a>
-                </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8750.714430228954!2d-46.61933132388312!3d-23.588314362584498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5bdc9713efa7%3A0x2cebae0eeb7ea658!2sCantinho%20do%20Ipiranga!5e1!3m2!1spt-BR!2sbr!4v1749476857906!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8750.714430228954!2d-46.61933132388312!3d-23.588314362584498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5bdc9713efa7%3A0x2cebae0eeb7ea658!2sCantinho%20do%20Ipiranga!5e1!3m2!1spt-BR!2sbr!4v1749479400307!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <p>R. da Imprensa, 310 - Ipiranga, São Paulo - SP, 04265-000</p>
+                <p>(11)3297-8305</p>
             <p class="mt-3 mb-0">© 2025 Cantinho do Ipiranga</p>
         </div>
     </footer>
-
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 </html>
