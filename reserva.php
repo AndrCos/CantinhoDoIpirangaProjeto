@@ -1,15 +1,13 @@
 <?php
 // Incluir os arquivos do PHPMailer
-// Certifique-se de que o caminho 'phpmailer/' está correto
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP; // Adicionar para usar SMTP
+use PHPMailer\PHPMailer\SMTP; //  para usar SMTP
 
 require 'phpmailer/PHPMailer.php';
 require 'phpmailer/SMTP.php';
 require 'phpmailer/Exception.php';
 
-// Inicializa as variáveis de mensagem
 $message_success = '';
 $message_error = '';
 
@@ -17,37 +15,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = htmlspecialchars(strip_tags(trim($_POST["nome"])));
     $email = htmlspecialchars(strip_tags(trim($_POST["email"])));
     
-    // ATENÇÃO: Os campos CPF e Telefone serão enviados sem as máscaras.
-    // Para validar e salvar em banco de dados, é bom remover as máscaras novamente.
-    $cpf = preg_replace('/[^0-9]/', '', htmlspecialchars(strip_tags(trim($_POST["cpf"])))); // Limpa CPF, deixa só números
-    $telefone = preg_replace('/[^0-9]/', '', htmlspecialchars(strip_tags(trim($_POST["telefone"])))); // Limpa Telefone, deixa só números
+    $cpf = preg_replace('/[^0-9]/', '', htmlspecialchars(strip_tags(trim($_POST["cpf"])))); // limpa CPF, deixa só números
+    $telefone = preg_replace('/[^0-9]/', '', htmlspecialchars(strip_tags(trim($_POST["telefone"])))); // limpa Telefone, deixa só números
 
     $data_reserva = htmlspecialchars(strip_tags(trim($_POST["data"])));
     $hora_reserva = htmlspecialchars(strip_tags(trim($_POST["hora"])));
     $num_pessoas = htmlspecialchars(strip_tags(trim($_POST["pessoas"])));
     $mensagem_adicional = htmlspecialchars(strip_tags(trim($_POST["mensagem_adicional"])));
 
-    // Validação dos dados obrigatórios
+    // validação dos dados obrigatórios
     if (empty($nome) || empty($email) || empty($telefone) || empty($data_reserva) || empty($hora_reserva) || empty($num_pessoas)) {
         $message_error = "Por favor, preencha todos os campos obrigatórios do formulário (Nome, E-mail, Telefone, Data, Hora, Número de Pessoas).";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $message_error = "O formato do e-mail é inválido. Por favor, corrija.";
-    } elseif (strlen($telefone) < 10 || strlen($telefone) > 11) { // Validação simples de telefone (DDD + 8 ou 9 dígitos)
+    } elseif (strlen($telefone) < 10 || strlen($telefone) > 11) { 
         $message_error = "O telefone deve ter 10 ou 11 dígitos (incluindo DDD).";
     }
-    // Adicione mais validações aqui, como para CPF se for obrigatório e você quiser validar formato real.
     
     else {
-        // --- Configuração e Envio de E-mail com PHPMailer ---
+        // configuração e envio de email com phpmailer
         $mail = new PHPMailer(true);
 
         try {
-            // Configurações do Servidor SMTP (utilizando Gmail como exemplo)
+            // Configurações do Servidor SMTP 
             $mail->isSMTP();
             $mail->Host       = 'smtp.gmail.com';
             $mail->SMTPAuth   = true;
-            $mail->Username   = 'and.cos92@gmail.com'; // **SEU EMAIL GMAIL REAL (o que você usa para enviar)**
-            $mail->Password   = 'ipwl afbl mynx aovd'; // **SUA SENHA DE APP DO GOOGLE (NÃO A SENHA NORMAL DO GMAIL!)**
+            $mail->Username   = 'and.cos92@gmail.com'; 
+            $mail->Password   = 'ipwl afbl mynx aovd'; 
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port       = 587;
             $mail->CharSet    = 'UTF-8';
@@ -58,26 +53,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->addReplyTo($email, $nome);
 
             // Conteúdo do E-mail
-            $mail->isHTML(false); // Definir que o formato do e-mail é texto plano
+            $mail->isHTML(false); 
             $mail->Subject = "Nova Reserva no Cantinho do Ipiranga de: " . $nome;
             $body_email = "Nome: " . $nome . "\n"
-                             . "Email: " . $email . "\n";
+                                 . "Email: " . $email . "\n";
             
-            // Reformatar CPF e Telefone para exibição no e-mail, se preferir o formato mascarado
+            // reformata cpf para email
             $cpf_formatted = '';
             if (strlen($cpf) == 11) {
                 $cpf_formatted = substr($cpf, 0, 3) . '.' . substr($cpf, 3, 3) . '.' . substr($cpf, 6, 3) . '-' . substr($cpf, 9, 2);
             } else {
-                $cpf_formatted = $cpf; // Caso não tenha 11 dígitos (não obrigatório, pode vir incompleto se não validado)
+                $cpf_formatted = $cpf; 
             }
 
             $telefone_formatted = '';
-            if (strlen($telefone) == 11) { // Celular (com 9º dígito)
+            if (strlen($telefone) == 11) { // celular (com 9º dígito)
                 $telefone_formatted = '(' . substr($telefone, 0, 2) . ') ' . substr($telefone, 2, 5) . '-' . substr($telefone, 7, 4);
-            } elseif (strlen($telefone) == 10) { // Telefone fixo ou celular antigo (sem 9º dígito)
+            } elseif (strlen($telefone) == 10) { // Telefone fixo ou celular antigo 
                 $telefone_formatted = '(' . substr($telefone, 0, 2) . ') ' . substr($telefone, 2, 4) . '-' . substr($telefone, 6, 4);
             } else {
-                $telefone_formatted = $telefone; // Caso o telefone não tenha 10 ou 11 dígitos válidos
+                $telefone_formatted = $telefone; // caso o telefone não tenha 10 ou 11 dígitos válidos
             }
 
             if (!empty($cpf_formatted)) {
@@ -85,9 +80,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             
             $body_email .= "Telefone: " . ($telefone_formatted ?: "Não informado") . "\n" // Usa o formatado
-                             . "Data da Reserva: " . $data_reserva . "\n"
-                             . "Hora da Reserva: " . $hora_reserva . "\n"
-                             . "Número de Pessoas: " . $num_pessoas . "\n\n";
+                                 . "Data da Reserva: " . $data_reserva . "\n"
+                                 . "Hora da Reserva: " . $hora_reserva . "\n"
+                                 . "Número de Pessoas: " . $num_pessoas . "\n\n";
             
             if (!empty($mensagem_adicional)) {
                 $body_email .= "Mensagem Adicional:\n" . $mensagem_adicional;
@@ -97,25 +92,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $mail->Body    = $body_email;
 
-            // Enviar o E-mail
             $mail->send();
             $message_success = "Obrigado! Sua reserva foi enviada com sucesso. Em breve entraremos em contato.";
 
         } catch (Exception $e) {
             $message_error = "Ocorreu um erro ao enviar a reserva. Por favor, tente novamente mais tarde.";
-            // Para fins de depuração (debug), você pode descomentar a linha abaixo para ver o erro detalhado do PHPMailer
-            // $message_error .= " Erro do PHPMailer: {$mail->ErrorInfo}";
         }
     }
 }
 
-// Implementação do padrão Post/Redirect/Get (PRG)
+// Implementação do padrão Post/Redirect/Get 
 if (!empty($message_success) && $_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: reserva.php?status=success");
     exit();
 }
 
-// Verifica se há status de sucesso na URL (após o redirecionamento PRG)
+// Verifica se há status de sucesso na URL 
 if (isset($_GET['status']) && $_GET['status'] == 'success') {
     $message_success = "Obrigado! Sua reserva foi enviada com sucesso. Em breve entraremos em contato.";
 }
@@ -141,7 +133,9 @@ if (isset($_GET['status']) && $_GET['status'] == 'success') {
     <header class="hero-contact">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.php">Cantinho do Ipiranga</a>
+                <a class="navbar-brand" href="index.php">
+                    <img src="imagens/IpirangaLogo.png" alt="Cantinho do Ipiranga Logo" class="navbar-logo">
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -224,12 +218,6 @@ if (isset($_GET['status']) && $_GET['status'] == 'success') {
         </div>
     </section>
 
-    <div class="ifood-float">
-        <a href="https://www.ifood.com.br" target="_blank">
-            <img src="imagens/iFood-Logo-site.png" alt="iFood" />
-        </a>
-    </div>
-
     <footer class="bg-dark text-white py-4">
         <div class="container text-center">
             <p>Siga-nos nas redes sociais</p>
@@ -244,9 +232,9 @@ if (isset($_GET['status']) && $_GET['status'] == 'success') {
                     <i class="fa-solid fa-phone"></i>
                 </a>
             </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8750.714430228954!2d-46.61933132388312!3d-23.588314362584498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5bdc9713efa7%3A0x2cebae0eeb7ea658!2sCantinho%20do%20Ipiranga!5e1!3m2!1spt-BR!2sbr!4v1749479400307!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                <p>R. da Imprensa, 310 - Ipiranga, São Paulo - SP, 04265-000</p>
-                <p>(11)3297-8305</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4375.357215114477!2d-46.61933132388312!3d-23.588314362584498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5bdc9713efa7%3A0x2cebae0eeb7ea658!2sCantinho%20do%20Ipiranga!5e1!3m2!1spt-BR!2sbr!4v1749482284095!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p>R. da Imprensa, 310 - Ipiranga, São Paulo - SP, 04265-000</p>
+            <p>(11)3297-8305</p>
             <p class="mt-3 mb-0">© 2025 Cantinho do Ipiranga</p>
         </div>
     </footer>
@@ -269,15 +257,15 @@ if (isset($_GET['status']) && $_GET['status'] == 'success') {
                 }
 
                 for (let i = 0; i < value.length; i++) {
-                    if (maskPattern[maskIndex] === '9') { 
+                    if (maskPattern[maskIndex] === '9') {
                         formattedValue += value[i];
                         maskIndex++;
-                    } else if (maskPattern[maskIndex] && maskPattern[maskIndex] !== '9') { 
+                    } else if (maskPattern[maskIndex] && maskPattern[maskIndex] !== '9') {
                         formattedValue += maskPattern[maskIndex];
                         maskIndex++;
-                        i--; 
+                        i--;
                     } else {
-                        break; 
+                        break;
                     }
                 }
                 input.value = formattedValue;
@@ -285,7 +273,7 @@ if (isset($_GET['status']) && $_GET['status'] == 'success') {
 
             // Máscara para CPF
             cpfInput.addEventListener('input', function(e) {
-                let value = e.target.value.replace(/\D/g, ''); 
+                let value = e.target.value.replace(/\D/g, '');
                 let mask = '';
                 if (value.length <= 11) { // CPF
                     mask = '999.999.999-99';
@@ -294,23 +282,23 @@ if (isset($_GET['status']) && $_GET['status'] == 'success') {
                 formatInput(e.target, mask);
             });
 
-            // Máscara para elefone 
+            // Máscara para telefone
             telefoneInput.addEventListener('input', function(e) {
-                let value = e.target.value.replace(/\D/g, ''); 
+                let value = e.target.value.replace(/\D/g, '');
                 let mask = '';
-                if (value.length <= 10) { // formato (XX) XXXX-XXXX 
+                if (value.length <= 10) { // formato (XX) XXXX-XXXX
                     mask = '(99) 9999-9999';
-                } else if (value.length <= 11) { // formato (XX) XXXXX-XXXX (celular com 9º dígito)
+                } else if (value.length <= 11) { // formato (XX) XXXXX-XXXX 
                     mask = '(99) 99999-9999';
                 }
                 formatInput(e.target, mask);
             });
 
             cpfInput.setAttribute('pattern', '[0-9]{3}\\.?[0-9]{3}\\.?[0-9]{3}\\-?[0-9]{2}');
-            cpfInput.setAttribute('maxlength', '14'); // ex 123.456.789-00
+            cpfInput.setAttribute('maxlength', '14'); 
 
             telefoneInput.setAttribute('pattern', '\\(?[0-9]{2}\\)?\\s?[0-9]{4,5}\\-?[0-9]{4}');
-            telefoneInput.setAttribute('maxlength', '15'); // ex (11) 99999-9999
+            telefoneInput.setAttribute('maxlength', '15'); 
         });
     </script>
 

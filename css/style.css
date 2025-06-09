@@ -1,6 +1,6 @@
 :root {
     --primary-color: #a83232;
-    --dark: #111;
+    --dark: #040301;
     --light: #f8f8f8;
     --white: #fff;
     --shadow: rgba(0, 0, 0, 0.3);
@@ -16,7 +16,7 @@
 
 body {
     font-family: var(--font-body);
-    background-color: var(--light);
+    background-color: #e98427;
     color: var(--dark);
     overflow-x: hidden;
 }
@@ -35,7 +35,7 @@ header.hero {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding-top: 56px;
+    padding-top: 56px; 
 }
 
 header.hero::before {
@@ -49,7 +49,7 @@ header.hero::before {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: rgba(0, 0, 0, 0.4); 
+    background-color: rgba(0, 0, 0, 0.4);
     background-blend-mode: overlay;
     z-index: 0;
 }
@@ -58,7 +58,7 @@ header.hero::before {
     position: relative;
     z-index: 1;
     padding: 0 1rem;
-    margin-top: -56px;
+    margin-top: -56px; 
 }
 
 .hero-content h1 {
@@ -89,11 +89,23 @@ header.hero::before {
     border-color: #8e2a2a !important;
 }
 
-/* Ajustes para a Navbar Bootstrap  */
+/* Ajustes para a Navbar Bootstrap  */
 .navbar-brand {
-    font-family: var(--font-heading);
-    letter-spacing: 2px;
-    font-size: 1.8rem;
+    padding-top: 0; 
+    padding-bottom: 0;
+}
+
+.navbar-logo {
+    height: 120px !important; 
+    width: auto !important; 
+    margin-right: 10px; 
+    border-radius: 5px; 
+}
+
+@media (max-width: 991.98px) { 
+    .navbar-logo {
+        height: 85px !important; 
+    }
 }
 
 .navbar-nav .nav-link {
@@ -112,6 +124,7 @@ header.hero::before {
     box-shadow: 0 4px 10px var(--shadow);
     overflow: hidden;
     transition: transform 0.3s ease;
+    
 }
 
 .card:hover {
@@ -134,7 +147,7 @@ header.hero::before {
     font-size: 0.95rem;
 }
 
-/* Botão flutuante iFood  */
+/* Botão flutuante iFood  */
 .ifood-float {
     position: fixed;
     bottom: 20px;
@@ -153,7 +166,7 @@ header.hero::before {
     transform: scale(1.1);
 }
 
-/* Rodapé  */
+/* Rodapé  */
 footer .social-icons a {
     transition: color 0.3s ease;
 }
@@ -171,7 +184,11 @@ footer iframe {
     border-radius: 8px;
 }
 
-/* Responsividade Geral  */
+footer.bg-dark {
+    background-color: #040301 !important; 
+}
+
+/* Responsividade Geral  */
 @media (max-width: 768px) {
     .hero-content h1 {
         font-size: 3rem;
@@ -179,6 +196,11 @@ footer iframe {
 
     .hero-content p {
         font-size: 1.2rem;
+    }
+
+    .navbar-nav .nav-link {
+        margin-left: 0; 
+        text-align: center; 
     }
 }
 
@@ -198,23 +220,37 @@ footer iframe {
 
 /* Estilo específico para o cabeçalho da página de Contato/Reserva */
 header.hero-contact {
-    position: relative; 
-    height: auto; 
-    min-height: 180px; 
-    background-color: var(--dark); 
+    position: relative;
+    height: auto;
+    min-height: 180px;
+    background-color: var(--dark);
     color: var(--white);
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 100px; 
-    padding-bottom: 20px; 
-    box-shadow: 0 2px 5px var(--shadow); 
+    padding-top: 100px;
+    padding-bottom: 20px;
+    box-shadow: 0 2px 5px var(--shadow);
 }
 
 header.hero-contact::before {
-    content: none; 
+    content: '';
+    display: none;
+}
 
 header.hero-contact .hero-content {
-    margin-top: 0; 
+    margin-top: 0;
+}
+
+.navbar.bg-dark {
+    background-color: #040301 !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--white); 
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: var(--primary-color); 
 }

@@ -66,7 +66,9 @@
     <header class="hero">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Cantinho do Ipiranga</a>
+                <a class="navbar-brand" href="#">
+                    <img src="imagens/IpirangaLogo.png" alt="Cantinho do Ipiranga Logo" class="navbar-logo">
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -101,6 +103,7 @@
     <section id="menu" class="container py-5">
         <h2 class="text-center mb-4">Nosso Cardápio</h2>
         <div class="row row-cols-1 row-cols-md-3 g-4">
+            
             <?php foreach ($menuItems as $item) : ?>
                 <div class="col">
                     <div class="card h-100 shadow-sm">
@@ -115,12 +118,13 @@
             <?php endforeach; ?>
         </div>
     </section>
-
     <div class="ifood-float">
         <a href="https://www.ifood.com.br" target="_blank">
             <img src="imagens/iFood-Logo-site.png" alt="iFood" />
         </a>
     </div>
+
+    
 
     <footer class="bg-dark text-white py-4">
         <div class="container text-center">
@@ -136,13 +140,54 @@
                     <i class="fa-solid fa-phone"></i>
                 </a>
             </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8750.714430228954!2d-46.61933132388312!3d-23.588314362584498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5bdc9713efa7%3A0x2cebae0eeb7ea658!2sCantinho%20do%20Ipiranga!5e1!3m2!1spt-BR!2sbr!4v1749479400307!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                <p>R. da Imprensa, 310 - Ipiranga, São Paulo - SP, 04265-000</p>
-                <p>(11)3297-8305</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4375.357215114477!2d-46.61933132388312!3d-23.588314362584498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5bdc9713efa7%3A0x2cebae0eeb7ea658!2sCantinho%20do%20Ipiranga!5e1!3m2!1spt-BR!2sbr!4v1749482284095!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p>R. da Imprensa, 310 - Ipiranga, São Paulo - SP, 04265-000</p>
+            <p>(11)3297-8305</p>
             <p class="mt-3 mb-0">© 2025 Cantinho do Ipiranga</p>
         </div>
     </footer>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuSection = document.getElementById('menu');
+            const footerSection = document.querySelector('footer'); // pega o rodapé
+            const ifoodButton = document.querySelector('.ifood-float');
+
+            if (!menuSection || !footerSection || !ifoodButton) {
+                return;
+            }
+
+            function checkButtonVisibility() {
+                const menuRect = menuSection.getBoundingClientRect();
+                const footerRect = footerSection.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+
+                // condição para mostrar o botão:
+                //  o topo do menu está visível 
+                //  a parte de baixo do menu ainda está visível 
+                //  o topo do rodapé ainda não está visível 
+                const isMenuVisible = (menuRect.top < windowHeight && menuRect.bottom >= 0);
+                const isFooterNotVisible = (footerRect.top > windowHeight); // Ou seja, o rodapé está abaixo da tela
+
+                // O botão deve ser visível se o menu está na tela E o rodapé ainda não começou a aparecer.
+                const shouldShowButton = isMenuVisible && (footerRect.top > (windowHeight - 50)); // Ajuste o '50' se quiser que ele suma antes ou depois
+
+                if (shouldShowButton) {
+                    ifoodButton.style.opacity = '1';
+                    ifoodButton.style.visibility = 'visible';
+                } else {
+                    ifoodButton.style.opacity = '0';
+                    ifoodButton.style.visibility = 'hidden';
+                }
+            }
+
+            window.addEventListener('scroll', checkButtonVisibility);
+
+            checkButtonVisibility();
+        });
+    </script>
 </body>
 
 </html>
