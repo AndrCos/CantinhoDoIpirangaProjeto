@@ -18,47 +18,225 @@
     <?php
     // Definição do array de itens do cardápio
     $menuItems = [
+        // --- Pratos do Dia ---
         [
             'id' => 1,
-            'nome' => 'Hambúrguer Artesanal',
-            'descricao' => 'Pão brioche, carne suculenta e queijo derretido.',
+            'categoria' => 'Pratos do Dia',
+            'nome' => 'Segunda-feira: Virado à Paulista',
+            'descricao' => '1 pessoa', // Descrição pode ser vazia ou adicionar algo relevante
             'preco' => 'R$ 35,00',
-            'imagem' => 'https://source.unsplash.com/400x300/?burger'
+            'imagem' => 'imagens/virado-a-paulista.jpg'
         ],
         [
             'id' => 2,
-            'nome' => 'Pizza de Calabresa',
-            'descricao' => 'Molho especial, queijo mussarela e calabresa defumada.',
+            'categoria' => 'Pratos do Dia',
+            'nome' => 'Terça-feira: Medalhão ao molho madeira com champignon',
+            'descricao' => '1 pessoa',
             'preco' => 'R$ 48,00',
-            'imagem' => 'https://source.unsplash.com/400x300/?pizza'
+            'imagem' => 'imagens/medalhao.jpg'
         ],
         [
             'id' => 3,
-            'nome' => 'Macarrão à Bolonhesa',
-            'descricao' => 'Receita italiana autêntica com molho caseiro.',
-            'preco' => 'R$ 42,50',
-            'imagem' => 'https://source.unsplash.com/400x300/?pasta'
+            'categoria' => 'Pratos do Dia',
+            'nome' => 'Quarta-feira: Feijoada',
+            'descricao' => '(1 pessoa / 2 pessoas)',
+            'preco' => 'R$ 44,00 / R$ 89,00',
+            'imagem' => 'imagens/Feijoada.jpg'
         ],
         [
             'id' => 4,
-            'nome' => 'Salmão Grelhado',
-            'descricao' => 'Filé de salmão fresco com molho de maracujá e purê de batatas.',
-            'preco' => 'R$ 65,00',
-            'imagem' => 'https://source.unsplash.com/400x300/?salmon-dish'
+            'categoria' => 'Pratos do Dia',
+            'nome' => 'Quinta-feira: Talharim ao molho branco com filé mignon',
+            'descricao' => '',
+            'preco' => 'R$ 46,00',
+            'imagem' => 'imagens/talharim-ao-molho.jpg'
         ],
         [
             'id' => 5,
-            'nome' => 'Salada Caesar',
-            'descricao' => 'Alface americana, croutons, parmesão e molho Caesar.',
-            'preco' => 'R$ 28,00',
-            'imagem' => 'https://source.unsplash.com/400x300/?caesar-salad'
+            'categoria' => 'Pratos do Dia',
+            'nome' => 'Sexta-feira: Salmão da Casa',
+            'descricao' => 'Acompanha arroz, purê',
+            'preco' => 'R$ 56,00',
+            'imagem' => 'imagens/salmao-casa.jpg'
         ],
         [
             'id' => 6,
-            'nome' => 'Brownie com Sorvete',
-            'descricao' => 'Delicioso brownie de chocolate com uma bola de sorvete de creme.',
-            'preco' => 'R$ 18,00',
-            'imagem' => 'https://source.unsplash.com/400x300/?brownie-ice-cream'
+            'categoria' => 'Pratos do Dia',
+            'nome' => 'Sábado: Feijoada',
+            'descricao' => '(1 pessoa / 2 pessoas)',
+            'preco' => 'R$ 44,00 / R$ 84,00',
+            'imagem' => 'imagens/Feijoada.jpg'
+        ],
+
+        // --- Salmão ---
+        [
+            'id' => 7,
+            'categoria' => 'Salmão',
+            'nome' => 'Grelhado com batata sauté',
+            'descricao' => '(Arroz e feijão)',
+            'preco' => 'R$ 51,00',
+            'imagem' => 'imagens/Salmao-grelhado-com-batatas-2.png'
+        ],
+        [
+            'id' => 8,
+            'categoria' => 'Salmão',
+            'nome' => 'Grelhado com legumes',
+            'descricao' => '(Arroz e feijão)',
+            'preco' => 'R$ 51,00',
+            'imagem' => 'imagens/salmao-grelhado-legumes.jpg'
+        ],
+
+        // --- Carnes - Contra Filé ---
+        [
+            'id' => 9,
+            'categoria' => 'Carnes',
+            'subcategoria' => 'Contra Filé',
+            'nome' => 'Com legumes',
+            'descricao' => '(Arroz e feijão)',
+            'preco' => 'R$ 34,00',
+            'imagem' => 'imagens/contra-file-legumes.jpeg'
+        ],
+        [
+            'id' => 10,
+            'categoria' => 'Carnes',
+            'subcategoria' => 'Contra Filé',
+            'nome' => 'À brasileira',
+            'descricao' => '(Arroz, feijão, fritas, vinagrete e farofa)',
+            'preco' => 'R$ 35,00',
+            'imagem' => 'imagens/contra-file-brasileira.jpg'
+        ],
+
+        // --- Carnes - Filé de Frango ---
+        [
+            'id' => 11,
+            'categoria' => 'Carnes',
+            'subcategoria' => 'Filé de Frango',
+            'nome' => 'Com creme de milho',
+            'descricao' => '(Arroz e fritas)',
+            'preco' => 'R$ 31,00',
+            'imagem' => 'imagens/frango-milho.jpg'
+        ],
+        [
+            'id' => 12,
+            'categoria' => 'Carnes',
+            'subcategoria' => 'Filé de Frango',
+            'nome' => 'Grelhado com legumes',
+            'descricao' => '(Arroz e feijão)',
+            'preco' => 'R$ 31,00',
+            'imagem' => 'imagens/frango-grelhado-legumes.png'
+        ],
+        [
+            'id' => 13,
+            'categoria' => 'Carnes',
+            'subcategoria' => 'Filé de Frango',
+            'nome' => 'Grelhado com fritas',
+            'descricao' => '(Arroz e feijão)',
+            'preco' => 'R$ 29,00',
+            'imagem' => 'imagens/frango-fritas.jpg'
+        ],
+        [
+            'id' => 14,
+            'categoria' => 'Carnes',
+            'subcategoria' => 'Filé de Frango',
+            'nome' => 'À parmegiana',
+            'descricao' => '(Arroz e fritas)',
+            'preco' => 'R$ 39,00',
+            'imagem' => 'imagens/file-parmegiana-fritas.jpg'
+        ],
+
+        // --- Carnes - Filé Mignon ---
+        [
+            'id' => 15,
+            'categoria' => 'Carnes',
+            'subcategoria' => 'Filé Mignon',
+            'nome' => 'À brasileira',
+            'descricao' => '(Arroz, feijão, fritas, vinagrete e farofa)',
+            'preco' => 'R$ 51,00',
+            'imagem' => 'imagens/filemignon-barasileira.jpg'
+        ],
+        [
+            'id' => 16,
+            'categoria' => 'Carnes',
+            'subcategoria' => 'Filé Mignon',
+            'nome' => 'À parmegiana',
+            'descricao' => '(Arroz e fritas)',
+            'preco' => 'R$ 54,00',
+            'imagem' => 'imagens/file-a-parmegiana.jpg'
+        ],
+        [
+            'id' => 17,
+            'categoria' => 'Carnes',
+            'subcategoria' => 'Filé Mignon',
+            'nome' => 'Com legumes',
+            'descricao' => '(Arroz e feijão)',
+            'preco' => 'R$ 53,00',
+            'imagem' => 'imagens/filemignon-legumes.jpg'
+        ],
+        [
+            'id' => 18,
+            'categoria' => 'Carnes',
+            'subcategoria' => 'Filé Mignon',
+            'nome' => 'Com queijo Minas e molho barbecue',
+            'descricao' => '(Arroz, provolone e milanesa)',
+            'preco' => 'R$ 66,00',
+            'imagem' => 'imagens/file-queijo.jpg'
+        ],
+        [
+            'id' => 19,
+            'categoria' => 'Carnes',
+            'subcategoria' => 'Filé Mignon',
+            'nome' => 'Medalhão ao molho gorgonzola e nozes',
+            'descricao' => '(Arroz, provolone e milanesa)',
+            'preco' => 'R$ 69,00',
+            'imagem' => 'imagens/file-gorgonzola.jpg'
+        ],
+
+        // --- Carnes - Picanha ---
+        [
+            'id' => 20,
+            'categoria' => 'Carnes',
+            'subcategoria' => 'Picanha',
+            'nome' => 'À brasileira',
+            'descricao' => '(Arroz, feijão, fritas, vinagrete e farofa)',
+            'preco' => 'R$ 51,00',
+            'imagem' => 'imagens/picanha-brasileira.jpg'
+        ],
+        [
+            'id' => 21,
+            'categoria' => 'Carnes',
+            'subcategoria' => 'Picanha',
+            'nome' => 'Com legumes',
+            'descricao' => '(Arroz e feijão)',
+            'preco' => 'R$ 53,00',
+            'imagem' => 'imagens/picanha-legumes.jpg'
+        ],
+
+        // --- Especial da Casa ---
+        [
+            'id' => 22,
+            'categoria' => 'Especial da Casa',
+            'nome' => 'Costelinha ao molho barbecue',
+            'descricao' => '(Arroz e fritas)',
+            'preco' => 'R$ 43,00',
+            'imagem' => 'imagens/costelinha-frias-arroz.jpg'
+        ],
+
+        // --- Massas ---
+        [
+            'id' => 23,
+            'categoria' => 'Massas',
+            'nome' => 'Talharim ao molho branco',
+            'descricao' => '',
+            'preco' => 'R$ 32,00',
+            'imagem' => 'imagens/talharim-molho.png'
+        ],
+        [
+            'id' => 24,
+            'categoria' => 'Massas',
+            'nome' => 'Talharim ao molho sugo',
+            'descricao' => '',
+            'preco' => 'R$ 32,00',
+            'imagem' => 'imagens/talharim-ao-sugo.jpg'
         ]
     ];
     ?>
@@ -102,29 +280,98 @@
 
     <section id="menu" class="container py-5">
         <h2 class="text-center mb-4">Nosso Cardápio</h2>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            
-            <?php foreach ($menuItems as $item) : ?>
-                <div class="col">
-                    <div class="card h-100 shadow-sm">
-                        <img src="<?= $item['imagem'] ?>" class="card-img-top" alt="<?= $item['nome'] ?>" />
-                        <div class="card-body">
-                            <h3 class="card-title"><?= $item['nome'] ?></h3>
-                            <p class="card-text"><?= $item['descricao'] ?></p>
-                            <p class="card-text"><strong><?= $item['preco'] ?></strong></p>
-                        </div>
+
+        <?php
+        $categorizedItems = [];
+        foreach ($menuItems as $item) {
+            $categorizedItems[$item['categoria']][] = $item;
+        }
+
+        foreach ($categorizedItems as $categoryName => $items) :
+            echo '<h3 class="mt-5 mb-3 menu-category-title">' . $categoryName . '</h3>';
+
+            $subCategories = [];
+            foreach ($items as $item) {
+                $subCategoryKey = isset($item['subcategoria']) ? $item['subcategoria'] : 'default';
+                $subCategories[$subCategoryKey][] = $item;
+            }
+
+            foreach ($subCategories as $subCategoryName => $subItems) :
+                if ($subCategoryName !== 'default') {
+                    echo '<h4 class="mt-3 mb-2 menu-subcategory-title">' . $subCategoryName . '</h4>';
+                }
+        ?>
+                <div id="<?= strtolower(str_replace(' ', '-', $categoryName)) ?>-carousel<?= ($subCategoryName !== 'default' ? '-' . strtolower(str_replace(' ', '-', $subCategoryName)) : '') ?>" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <?php
+                        // Loop para criar os slides do carrossel, com 2 cards por slide
+                        for ($i = 0; $i < count($subItems); $i += 2) :
+                            $isActive = ($i === 0) ? 'active' : ''; // Primeiro slide ativo
+                        ?>
+                            <div class="carousel-item <?= $isActive ?>">
+                                <div class="row justify-content-center g-4">
+                                    <?php
+                                    // Primeiro card do par
+                                    $item1 = $subItems[$i];
+                                    ?>
+                                    <div class="col-12 col-md-6 d-flex justify-content-center">
+                                        <div class="card h-100 shadow-sm w-100 carousel-card-item">
+                                            <img src="<?= $item1['imagem'] ?>" class="card-img-top" alt="<?= $item1['nome'] ?>" />
+                                            <div class="card-body">
+                                                <h3 class="card-title"><?= $item1['nome'] ?></h3>
+                                                <?php if (!empty($item1['descricao'])) : ?>
+                                                    <p class="card-text text-muted"><?= $item1['descricao'] ?></p>
+                                                <?php endif; ?>
+                                                <p class="card-text"><strong><?= $item1['preco'] ?></strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <?php
+                                    // Segundo card do par (se existir)
+                                    if (isset($subItems[$i + 1])) :
+                                        $item2 = $subItems[$i + 1];
+                                    ?>
+                                        <div class="col-12 col-md-6 d-flex justify-content-center">
+                                            <div class="card h-100 shadow-sm w-100 carousel-card-item">
+                                                <img src="<?= $item2['imagem'] ?>" class="card-img-top" alt="<?= $item2['nome'] ?>" />
+                                                <div class="card-body">
+                                                    <h3 class="card-title"><?= $item2['nome'] ?></h3>
+                                                    <?php if (!empty($item2['descricao'])) : ?>
+                                                        <p class="card-text text-muted"><?= $item2['descricao'] ?></p>
+                                                    <?php endif; ?>
+                                                    <p class="card-text"><strong><?= $item2['preco'] ?></strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        <?php endfor; ?>
                     </div>
+
+                    <?php if (count($subItems) > 2) : // Mostrar controles apenas se houver mais de 2 itens na subcategoria ?>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#<?= strtolower(str_replace(' ', '-', $categoryName)) ?>-carousel<?= ($subCategoryName !== 'default' ? '-' . strtolower(str_replace(' ', '-', $subCategoryName)) : '') ?>" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#<?= strtolower(str_replace(' ', '-', $categoryName)) ?>-carousel<?= ($subCategoryName !== 'default' ? '-' . strtolower(str_replace(' ', '-', $subCategoryName)) : '') ?>" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    <?php endif; ?>
                 </div>
-            <?php endforeach; ?>
-        </div>
+        <?php
+            endforeach; // Fim do foreach para subcategorias
+        endforeach; // Fim do foreach para categorias
+        ?>
     </section>
+
     <div class="ifood-float">
         <a href="https://www.ifood.com.br" target="_blank">
             <img src="imagens/iFood-Logo-site.png" alt="iFood" />
         </a>
     </div>
-
-    
 
     <footer class="bg-dark text-white py-4">
         <div class="container text-center">
@@ -140,19 +387,17 @@
                     <i class="fa-solid fa-phone"></i>
                 </a>
             </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4375.357215114477!2d-46.61933132388312!3d-23.588314362584498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5bdc9713efa7%3A0x2cebae0eeb7ea658!2sCantinho%20do%20Ipiranga!5e1!3m2!1spt-BR!2sbr!4v1749482284095!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.702758153406!2d-46.602287224213945!3d-23.578687262071988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5ba8516ee64f%3A0x94f1c1f54460f38d!2sR.%20da%20Imprensa%2C%20310%20-%20Ipiranga%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004265-000!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             <p>R. da Imprensa, 310 - Ipiranga, São Paulo - SP, 04265-000</p>
             <p>(11)3297-8305</p>
             <p class="mt-3 mb-0">© 2025 Cantinho do Ipiranga</p>
         </div>
     </footer>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const menuSection = document.getElementById('menu');
-            const footerSection = document.querySelector('footer'); // pega o rodapé
+            const footerSection = document.querySelector('footer');
             const ifoodButton = document.querySelector('.ifood-float');
 
             if (!menuSection || !footerSection || !ifoodButton) {
@@ -164,15 +409,7 @@
                 const footerRect = footerSection.getBoundingClientRect();
                 const windowHeight = window.innerHeight;
 
-                // condição para mostrar o botão:
-                //  o topo do menu está visível 
-                //  a parte de baixo do menu ainda está visível 
-                //  o topo do rodapé ainda não está visível 
-                const isMenuVisible = (menuRect.top < windowHeight && menuRect.bottom >= 0);
-                const isFooterNotVisible = (footerRect.top > windowHeight); // Ou seja, o rodapé está abaixo da tela
-
-                // O botão deve ser visível se o menu está na tela E o rodapé ainda não começou a aparecer.
-                const shouldShowButton = isMenuVisible && (footerRect.top > (windowHeight - 50)); // Ajuste o '50' se quiser que ele suma antes ou depois
+                const shouldShowButton = (menuRect.top < windowHeight && menuRect.bottom >= 0) && (footerRect.top > (windowHeight - 50));
 
                 if (shouldShowButton) {
                     ifoodButton.style.opacity = '1';

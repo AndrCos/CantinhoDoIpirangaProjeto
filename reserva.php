@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = htmlspecialchars(strip_tags(trim($_POST["email"])));
     
     $cpf = preg_replace('/[^0-9]/', '', htmlspecialchars(strip_tags(trim($_POST["cpf"])))); // limpa CPF, deixa só números
-    $telefone = preg_replace('/[^0-9]/', '', htmlspecialchars(strip_tags(trim($_POST["telefone"])))); // limpa Telefone, deixa só números
+    $telefone = preg_replace('/[^0-9]/', '', htmlspecialchars(strip_tags(trim($_POST["telefone"])))); // limpa telefone, deixa só números
 
     $data_reserva = htmlspecialchars(strip_tags(trim($_POST["data"])));
     $hora_reserva = htmlspecialchars(strip_tags(trim($_POST["hora"])));
