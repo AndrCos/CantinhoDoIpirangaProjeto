@@ -1,6 +1,6 @@
 :root {
     --primary-color: #a83232;
-    --dark: #040301;
+    --dark: #040301; /* cor principal escura (preto) */
     --light: #f8f8f8;
     --white: #fff;
     --shadow: rgba(0, 0, 0, 0.3);
@@ -16,8 +16,8 @@
 
 body {
     font-family: var(--font-body);
-    background-color: #e98427; /* Cor de fundo principal do body */
-    color: var(--dark);
+    background-color: var(--dark); 
+    color: var(--dark); 
     overflow-x: hidden;
 }
 
@@ -26,56 +26,61 @@ a {
     text-decoration: none;
 }
 
-/* --- Estilos do Hero (Seção Inicial) --- */
+/*  Estilos do Hero (seção inicial)  */
 header.hero {
     position: relative;
-    height: 100vh;
+    height: calc(75vh - 120px);
+    margin-top: 120px;
     color: var(--white);
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding-top: 56px;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
 
-header.hero::before {
-    content: '';
+/* estilos para o carrossel do hero  */
+#heroCarousel {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../imagens/backfundo.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: rgba(0, 0, 0, 0.4); /* Overlay escuro */
-    background-blend-mode: overlay;
     z-index: 0;
+    background-color: var(--dark);
+}
+
+header.hero .carousel.slide {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2); /* Sombra dourada sutil */
+}
+
+.hero-carousel-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(60%);
+}
+
+header.hero::before {
+    content: '';
+    display: none;
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
     padding: 0 1rem;
-    margin-top: -56px; /* Compensa o padding-top do header para centralizar melhor */
+    margin-top: 0;
 }
 
-.hero-content h1 {
-    font-size: 4rem;
-    font-family: var(--font-heading);
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 8px var(--shadow);
+#form-reserva {
+    padding-top: 50px;
 }
 
-.hero-content p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    text-shadow: 1px 1px 5px var(--shadow);
-}
-
-/* --- Estilos dos Botões --- */
+/*  estilos dos Botões  */
 .btn-primary {
     background-color: var(--primary-color) !important;
     border-color: var(--primary-color) !important;
@@ -91,7 +96,7 @@ header.hero::before {
     border-color: #8e2a2a !important;
 }
 
-/* --- Ajustes para a Navbar Bootstrap --- */
+/*  Ajustes para a Navbar Bootstrap  */
 .navbar-brand {
     padding-top: 0;
     padding-bottom: 0;
@@ -102,6 +107,7 @@ header.hero::before {
     width: auto !important;
     margin-right: 10px;
     border-radius: 5px;
+    z-index: 1030;
 }
 
 @media (max-width: 991.98px) {
@@ -121,9 +127,10 @@ header.hero::before {
     color: var(--primary-color);
 }
 
-/* Cores da Navbar */
+/* cores da Navbar */
 .navbar.bg-dark {
-    background-color: var(--dark) !important; /* Usando a variável CSS */
+    background-color: var(--dark) !important; /* Usa a variável --dark */
+    z-index: 1030;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -134,13 +141,13 @@ header.hero::before {
     color: var(--primary-color);
 }
 
-
-/* --- Estilos dos Cards do Cardápio --- */
+/*  estilos dos Cards do Cardápio  */
 .card {
     border-radius: 10px;
-    box-shadow: 0 4px 10px var(--shadow);
-    overflow: hidden;
+    box-shadow: 0 4px 10px var(--shadow), 0 0 8px rgba(255, 215, 0, 0.3);
+    overflow: hidden; 
     transition: transform 0.3s ease;
+    background-color: var(--white); /* mantém o fundo do card branco */
 }
 
 .card:hover {
@@ -149,80 +156,160 @@ header.hero::before {
 
 .card-img-top {
     width: 100%;
-    height: 450px;
+    height: 350px;
     object-fit: cover;
     object-position: center;
 }
 
+.card-body {
+    padding: 15px;
+}
+
 .card-body h3 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
     font-size: 1.3rem;
-    font-family: var(--font-heading); /* Usando a fonte de título para o nome do prato */
-    color: var(--primary-color); /* Dando destaque ao nome do prato */
+    font-family: var(--font-heading);
+    color: var(--primary-color);
 }
 
 .card-body p {
-    color: #555;
+    color: #555; /* cor do texto das descrições */
+    margin-bottom: 0.2rem;
     font-size: 0.95rem;
 }
 
-/* --- Estilos para os Títulos de Categoria e Subcategoria do Cardápio --- */
-.menu-category-title {
-    font-family: var(--font-heading); /* Usa a fonte de título definida */
-    color: var(--dark); /* Cor escura para o título */
+/*  Ajustes para os Títulos do Cardápio */
+#menu {
+    padding-bottom: 50px; 
+}
+
+/* título principal "Nosso Cardápio" (h2) */
+#menu h2 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
     text-align: center;
-    margin-top: 3.5rem; /* Espaçamento maior acima */
-    margin-bottom: 2rem; /* Espaçamento abaixo */
-    font-size: 2.8rem; /* Tamanho maior para o título principal da categoria */
-    padding-bottom: 15px; /* Espaço para a linha */
-    border-bottom: 3px solid var(--primary-color); /* Linha de destaque com a cor primária */
-    display: block; /* Garante que a linha ocupe toda a largura */
-    position: relative; /* Para posicionamento de pseudo-elementos */
-    text-transform: uppercase; /* Deixa o título em maiúsculas */
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+    border-bottom: 4px solid var(--primary-color);
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* títulos de Categoria (h3) */
+.menu-category-title {
+    font-family: var(--font-heading);
+    color: #f6bc4b;
+    text-align: center;
+    margin-top: 3.5rem;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--primary-color);
+    display: block;
+    position: relative;
+    text-transform: uppercase;
     letter-spacing: 1.5px;
 }
 
 .menu-category-title::before {
-    content: "🍽️ "; /* Adiciona um ícone de garfo e faca */
+    content: "🍽️ ";
     display: inline-block;
     margin-right: 10px;
-    font-size: 2.2rem; /* Ajusta o tamanho do ícone */
+    font-size: 1.8rem;
     vertical-align: middle;
+    color: #f6bc4b;
 }
 
+/* títulos de Subcategoria (h4) */
 .menu-subcategory-title {
-    font-family: var(--font-body); /* Usa a fonte de corpo definida */
-    color: var(--dark); /* Cor mais suave para subcategoria */
+    font-family: var(--font-body);
+    color: #f6bc4b;
     text-align: center;
-    margin-top: 2.5rem; /* Espaçamento acima */
-    margin-bottom: 1.5rem; /* Espaçamento abaixo */
-    font-size: 2rem; /* Tamanho para a subcategoria */
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
     position: relative;
     padding-bottom: 10px;
 }
 
 .menu-subcategory-title::before {
-    content: "• "; /* Um marcador simples */
+    content: "• ";
     display: inline-block;
     margin-right: 5px;
-    color: var(--primary-color); /* Cor do marcador */
+    color: #f6bc4b;
 }
 
-/* Ajuste para garantir que os cards estejam sempre no mesmo nível após os títulos */
-/* Nota: 'justify-content: center' é útil se a quantidade de cards não preencher a linha, como um card em uma linha de 2 */
-.row.row-cols-1.row-cols-md-2.g-4.mb-4 {
+/* ajuste para garantir que os cards estejam sempre no mesmo nível após os títulos */
+.row.justify-content-center.g-4 {
     justify-content: center;
 }
 
+/* estilo para todas as setas do carrosel */
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFD700'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e") !important;
+    filter: none !important;
+}
 
-/* --- Botão flutuante iFood --- */
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFD700'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+    filter: none !important;
+}
+
+/* posicionamento das setas dos carrosséis de pratos (dentro do #menu) */
+#menu .carousel.slide .carousel-control-prev,
+#menu .carousel.slide .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px; 
+    height: 80px; 
+    z-index: 10;
+    opacity: 1 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark); 
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+#menu .carousel.slide .carousel-control-prev:hover,
+#menu .carousel.slide .carousel-control-next:hover {
+    background-color: #1a1a1a; 
+}
+
+#menu .carousel.slide .carousel-control-prev {
+    left: -80px; 
+    right: auto;
+}
+
+#menu .carousel.slide .carousel-control-next {
+    right: -80px; 
+    left: auto;
+}
+
+/* opcional: Ajustar o tamanho dos ícones das setas dos pratos, se necessário */
+#menu .carousel.slide .carousel-control-prev-icon,
+#menu .carousel.slide .carousel-control-next-icon {
+    width: 40px; 
+    height: 40px; 
+    background-size: 100% 100%;
+}
+
+
+/*  botão flutuante iFood */
 .ifood-float {
     position: fixed;
     bottom: 20px;
     right: 20px;
     z-index: 999;
     cursor: pointer;
-    /* Adicionados para controlar a visibilidade via JS */
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -238,7 +325,7 @@ header.hero::before {
     transform: scale(1.1);
 }
 
-/* --- Rodapé --- */
+/*  Rodapé  */
 footer .social-icons a {
     transition: color 0.3s ease;
 }
@@ -252,57 +339,120 @@ footer iframe {
     border: none;
     width: 100%;
     max-width: 500px;
-    height: 150px; /* Altura do mapa no rodapé */
+    height: 150px;
     border-radius: 8px;
 }
 
 footer.bg-dark {
-    background-color: var(--dark) !important; /* Usando a variável CSS */
+    background-color: var(--dark) !important; /
 }
 
-/* --- Responsividade Geral --- */
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 3rem;
+/* estilo específico para o cabeçalho da página de contato/reserva */
+header.hero-contact {
+    position: relative;
+    height: auto;
+    min-height: 180px;
+    background-color: var(--dark); 
+    color: var(--white);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 140px;
+    padding-bottom: 20px;
+    box-shadow: 0 2px 5px var(--shadow);
+}
+
+header.hero-contact::before {
+    content: '';
+    display: none;
+}
+
+header.hero-contact .hero-content {
+    margin-top: 0;
+}
+
+/* estilo para campos de formulário (input, textarea, select) */
+.form-control {
+    color: #f6bc4b !important;
+    background-color: #333333;
+    border: 1px solid #555555;
+}
+
+.form-control::placeholder {
+    color: rgba(246, 188, 75, 0.7) !important;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: rgba(246, 188, 75, 0.7) !important;
+}
+
+.form-control:-moz-placeholder {
+    color: rgba(246, 188, 75, 0.7) !important;
+    opacity: 1;
+}
+
+.form-control::-moz-placeholder {
+    color: rgba(246, 188, 75, 0.7) !important;
+    opacity: 1;
+}
+
+.form-control:-ms-input-placeholder {
+    color: rgba(246, 188, 75, 0.7) !important;
+}
+
+.form-label {
+    color: #f6bc4b;
+}
+
+
+/* Responsividade Geral */
+@media (max-width: 991.98px) {
+    header.hero-contact {
+        padding-top: 100px;
+    }
+    
+    /* Responsividade para o hero principal no Mobile */
+    header.hero {
+        margin-top: 85px;
+        height: calc(80vh - 85px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
     }
 
-    .hero-content p {
-        font-size: 1.2rem;
-    }
-
-    .navbar-nav .nav-link {
-        margin-left: 0;
+    .hero-content {
         text-align: center;
     }
 
-    /* Reduz o tamanho dos títulos das categorias em telas menores */
-    .menu-category-title {
-        font-size: 2.2rem;
-    }
-
-    .menu-category-title::before {
-        font-size: 1.8rem;
-    }
-
-    .menu-subcategory-title {
-        font-size: 1.6rem;
-    }
-}
-
-@media (max-width: 480px) {
     .hero-content h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
     }
 
     .hero-content p {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .btn-primary {
         font-size: 1rem;
+        padding: 0.6rem 1.5rem;
     }
 
-    .ifood-float img {
-        width: 50px;
+    /* as setas dos carrosséis (tanto do hero quanto do menu) já são ocultadas pelo Bootstrap em telas pequenas */
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none !important;
     }
 
-    /* Mais redução para títulos em telas muito pequenas */
+    /* Oculta os indicadores do carrossel (os "quadradinhos") no mobile */
+    .carousel-indicators {
+        display: none !important;
+    }
+
     .menu-category-title {
         font-size: 1.8rem;
     }
@@ -314,29 +464,30 @@ footer.bg-dark {
     .menu-subcategory-title {
         font-size: 1.3rem;
     }
+
+    #menu h2 {
+        font-size: 2.5rem;
+    }
 }
 
-/* --- Estilo específico para o cabeçalho da página de Contato/Reserva --- */
-header.hero-contact {
-    position: relative;
-    height: auto;
-    min-height: 180px;
-    background-color: var(--dark);
-    color: var(--white);
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 100px;
-    padding-bottom: 20px;
-    box-shadow: 0 2px 5px var(--shadow);
-}
+@media (max-width: 480px) {
+    .ifood-float img {
+        width: 50px;
+    }
 
-header.hero-contact::before {
-    content: '';
-    display: none; /* Remove o background do hero padrão para essa página */
-}
+    .menu-category-title {
+        font-size: 1.5rem;
+    }
 
-header.hero-contact .hero-content {
-    margin-top: 0;
+    .menu-category-title::before {
+        font-size: 1.2rem;
+    }
+
+    .menu-subcategory-title {
+        font-size: 1.1rem;
+    }
+
+    #menu h2 {
+        font-size: 2rem;
+    }
 }

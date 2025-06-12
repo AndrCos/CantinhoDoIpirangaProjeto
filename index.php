@@ -16,230 +16,230 @@
 <body>
 
     <?php
-    // Definição do array de itens do cardápio
-    $menuItems = [
-        // --- Pratos do Dia ---
-        [
-            'id' => 1,
-            'categoria' => 'Pratos do Dia',
-            'nome' => 'Segunda-feira: Virado à Paulista',
-            'descricao' => '1 pessoa', // Descrição pode ser vazia ou adicionar algo relevante
-            'preco' => 'R$ 35,00',
-            'imagem' => 'imagens/virado-a-paulista.jpg'
-        ],
-        [
-            'id' => 2,
-            'categoria' => 'Pratos do Dia',
-            'nome' => 'Terça-feira: Medalhão ao molho madeira com champignon',
-            'descricao' => '1 pessoa',
-            'preco' => 'R$ 48,00',
-            'imagem' => 'imagens/medalhao.jpg'
-        ],
-        [
-            'id' => 3,
-            'categoria' => 'Pratos do Dia',
-            'nome' => 'Quarta-feira: Feijoada',
-            'descricao' => '(1 pessoa / 2 pessoas)',
-            'preco' => 'R$ 44,00 / R$ 89,00',
-            'imagem' => 'imagens/Feijoada.jpg'
-        ],
-        [
-            'id' => 4,
-            'categoria' => 'Pratos do Dia',
-            'nome' => 'Quinta-feira: Talharim ao molho branco com filé mignon',
-            'descricao' => '',
-            'preco' => 'R$ 46,00',
-            'imagem' => 'imagens/talharim-ao-molho.jpg'
-        ],
-        [
-            'id' => 5,
-            'categoria' => 'Pratos do Dia',
-            'nome' => 'Sexta-feira: Salmão da Casa',
-            'descricao' => 'Acompanha arroz, purê',
-            'preco' => 'R$ 56,00',
-            'imagem' => 'imagens/salmao-casa.jpg'
-        ],
-        [
-            'id' => 6,
-            'categoria' => 'Pratos do Dia',
-            'nome' => 'Sábado: Feijoada',
-            'descricao' => '(1 pessoa / 2 pessoas)',
-            'preco' => 'R$ 44,00 / R$ 84,00',
-            'imagem' => 'imagens/Feijoada.jpg'
-        ],
+// Definição do array de itens do cardápio (mantido inalterado)
+$menuItems = [
+    //  Pratos do Dia 
+    [
+        'id' => 1,
+        'categoria' => 'Pratos do Dia',
+        'nome' => 'Segunda-feira: Virado à Paulista',
+        'descricao' => '1 pessoa', 
+        'preco' => 'R$ 35,00',
+        'imagem' => 'imagens/virado-a-paulista.jpg'
+    ],
+    [
+        'id' => 2,
+        'categoria' => 'Pratos do Dia',
+        'nome' => 'Terça-feira: Medalhão ao molho madeira com champignon',
+        'descricao' => '1 pessoa',
+        'preco' => 'R$ 48,00',
+        'imagem' => 'imagens/medalhao.jpg'
+    ],
+    [
+        'id' => 3,
+        'categoria' => 'Pratos do Dia',
+        'nome' => 'Quarta-feira: Feijoada',
+        'descricao' => '(1 pessoa / 2 pessoas)',
+        'preco' => 'R$ 44,00 / R$ 89,00',
+        'imagem' => 'imagens/Feijoada.jpg'
+    ],
+    [
+        'id' => 4,
+        'categoria' => 'Pratos do Dia',
+        'nome' => 'Quinta-feira: Talharim ao molho branco com filé mignon',
+        'descricao' => '',
+        'preco' => 'R$ 46,00',
+        'imagem' => 'imagens/talharim-ao-molho.jpg'
+    ],
+    [
+        'id' => 5,
+        'categoria' => 'Pratos do Dia',
+        'nome' => 'Sexta-feira: Salmão da Casa',
+        'descricao' => 'Acompanha arroz, purê',
+        'preco' => 'R$ 56,00',
+        'imagem' => 'imagens/salmao-casa.jpg'
+    ],
+    [
+        'id' => 6,
+        'categoria' => 'Pratos do Dia',
+        'nome' => 'Sábado: Feijoada',
+        'descricao' => '(1 pessoa / 2 pessoas)',
+        'preco' => 'R$ 44,00 / R$ 84,00',
+        'imagem' => 'imagens/Feijoada.jpg'
+    ],
 
-        // --- Salmão ---
-        [
-            'id' => 7,
-            'categoria' => 'Salmão',
-            'nome' => 'Grelhado com batata sauté',
-            'descricao' => '(Arroz e feijão)',
-            'preco' => 'R$ 51,00',
-            'imagem' => 'imagens/Salmao-grelhado-com-batatas-2.png'
-        ],
-        [
-            'id' => 8,
-            'categoria' => 'Salmão',
-            'nome' => 'Grelhado com legumes',
-            'descricao' => '(Arroz e feijão)',
-            'preco' => 'R$ 51,00',
-            'imagem' => 'imagens/salmao-grelhado-legumes.jpg'
-        ],
+    //  Salmão 
+    [
+        'id' => 7,
+        'categoria' => 'Salmão',
+        'nome' => 'Grelhado com batata sauté',
+        'descricao' => '(Arroz e feijão)',
+        'preco' => 'R$ 51,00',
+        'imagem' => 'imagens/Salmao-grelhado-com-batatas-2.png'
+    ],
+    [
+        'id' => 8,
+        'categoria' => 'Salmão',
+        'nome' => 'Grelhado com legumes',
+        'descricao' => '(Arroz e feijão)',
+        'preco' => 'R$ 51,00',
+        'imagem' => 'imagens/salmao-grelhado-legumes.jpg'
+    ],
 
-        // --- Carnes - Contra Filé ---
-        [
-            'id' => 9,
-            'categoria' => 'Carnes',
-            'subcategoria' => 'Contra Filé',
-            'nome' => 'Com legumes',
-            'descricao' => '(Arroz e feijão)',
-            'preco' => 'R$ 34,00',
-            'imagem' => 'imagens/contra-file-legumes.jpeg'
-        ],
-        [
-            'id' => 10,
-            'categoria' => 'Carnes',
-            'subcategoria' => 'Contra Filé',
-            'nome' => 'À brasileira',
-            'descricao' => '(Arroz, feijão, fritas, vinagrete e farofa)',
-            'preco' => 'R$ 35,00',
-            'imagem' => 'imagens/contra-file-brasileira.jpg'
-        ],
+    //  Carnes - Contra Filé 
+    [
+        'id' => 9,
+        'categoria' => 'Carnes',
+        'subcategoria' => 'Contra Filé',
+        'nome' => 'Com legumes',
+        'descricao' => '(Arroz e feijão)',
+        'preco' => 'R$ 34,00',
+        'imagem' => 'imagens/contra-file-legumes.jpeg'
+    ],
+    [
+        'id' => 10,
+        'categoria' => 'Carnes',
+        'subcategoria' => 'Contra Filé',
+        'nome' => 'À brasileira',
+        'descricao' => '(Arroz, feijão, fritas, vinagrete e farofa)',
+        'preco' => 'R$ 35,00',
+        'imagem' => 'imagens/contra-file-brasileira.jpg'
+    ],
 
-        // --- Carnes - Filé de Frango ---
-        [
-            'id' => 11,
-            'categoria' => 'Carnes',
-            'subcategoria' => 'Filé de Frango',
-            'nome' => 'Com creme de milho',
-            'descricao' => '(Arroz e fritas)',
-            'preco' => 'R$ 31,00',
-            'imagem' => 'imagens/frango-milho.jpg'
-        ],
-        [
-            'id' => 12,
-            'categoria' => 'Carnes',
-            'subcategoria' => 'Filé de Frango',
-            'nome' => 'Grelhado com legumes',
-            'descricao' => '(Arroz e feijão)',
-            'preco' => 'R$ 31,00',
-            'imagem' => 'imagens/frango-grelhado-legumes.png'
-        ],
-        [
-            'id' => 13,
-            'categoria' => 'Carnes',
-            'subcategoria' => 'Filé de Frango',
-            'nome' => 'Grelhado com fritas',
-            'descricao' => '(Arroz e feijão)',
-            'preco' => 'R$ 29,00',
-            'imagem' => 'imagens/frango-fritas.jpg'
-        ],
-        [
-            'id' => 14,
-            'categoria' => 'Carnes',
-            'subcategoria' => 'Filé de Frango',
-            'nome' => 'À parmegiana',
-            'descricao' => '(Arroz e fritas)',
-            'preco' => 'R$ 39,00',
-            'imagem' => 'imagens/file-parmegiana-fritas.jpg'
-        ],
+    //  Carnes - Filé de Frango 
+    [
+        'id' => 11,
+        'categoria' => 'Carnes',
+        'subcategoria' => 'Filé de Frango',
+        'nome' => 'Com creme de milho',
+        'descricao' => '(Arroz e fritas)',
+        'preco' => 'R$ 31,00',
+        'imagem' => 'imagens/frango-milho.jpg'
+    ],
+    [
+        'id' => 12,
+        'categoria' => 'Carnes',
+        'subcategoria' => 'Filé de Frango',
+        'nome' => 'Grelhado com legumes',
+        'descricao' => '(Arroz e feijão)',
+        'preco' => 'R$ 31,00',
+        'imagem' => 'imagens/frango-grelhado-legumes.png'
+    ],
+    [
+        'id' => 13,
+        'categoria' => 'Carnes',
+        'subcategoria' => 'Filé de Frango',
+        'nome' => 'Grelhado com fritas',
+        'descricao' => '(Arroz e feijão)',
+        'preco' => 'R$ 29,00',
+        'imagem' => 'imagens/frango-fritas.jpg'
+    ],
+    [
+        'id' => 14,
+        'categoria' => 'Carnes',
+        'subcategoria' => 'Filé de Frango',
+        'nome' => 'À parmegiana',
+        'descricao' => '(Arroz e fritas)',
+        'preco' => 'R$ 39,00',
+        'imagem' => 'imagens/file-parmegiana-fritas.jpg'
+    ],
 
-        // --- Carnes - Filé Mignon ---
-        [
-            'id' => 15,
-            'categoria' => 'Carnes',
-            'subcategoria' => 'Filé Mignon',
-            'nome' => 'À brasileira',
-            'descricao' => '(Arroz, feijão, fritas, vinagrete e farofa)',
-            'preco' => 'R$ 51,00',
-            'imagem' => 'imagens/filemignon-barasileira.jpg'
-        ],
-        [
-            'id' => 16,
-            'categoria' => 'Carnes',
-            'subcategoria' => 'Filé Mignon',
-            'nome' => 'À parmegiana',
-            'descricao' => '(Arroz e fritas)',
-            'preco' => 'R$ 54,00',
-            'imagem' => 'imagens/file-a-parmegiana.jpg'
-        ],
-        [
-            'id' => 17,
-            'categoria' => 'Carnes',
-            'subcategoria' => 'Filé Mignon',
-            'nome' => 'Com legumes',
-            'descricao' => '(Arroz e feijão)',
-            'preco' => 'R$ 53,00',
-            'imagem' => 'imagens/filemignon-legumes.jpg'
-        ],
-        [
-            'id' => 18,
-            'categoria' => 'Carnes',
-            'subcategoria' => 'Filé Mignon',
-            'nome' => 'Com queijo Minas e molho barbecue',
-            'descricao' => '(Arroz, provolone e milanesa)',
-            'preco' => 'R$ 66,00',
-            'imagem' => 'imagens/file-queijo.jpg'
-        ],
-        [
-            'id' => 19,
-            'categoria' => 'Carnes',
-            'subcategoria' => 'Filé Mignon',
-            'nome' => 'Medalhão ao molho gorgonzola e nozes',
-            'descricao' => '(Arroz, provolone e milanesa)',
-            'preco' => 'R$ 69,00',
-            'imagem' => 'imagens/file-gorgonzola.jpg'
-        ],
+    //  Carnes - Filé Mignon 
+    [
+        'id' => 15,
+        'categoria' => 'Carnes',
+        'subcategoria' => 'Filé Mignon',
+        'nome' => 'À brasileira',
+        'descricao' => '(Arroz, feijão, fritas, vinagrete e farofa)',
+        'preco' => 'R$ 51,00',
+        'imagem' => 'imagens/filemignon-barasileira.jpg'
+    ],
+    [
+        'id' => 16,
+        'categoria' => 'Carnes',
+        'subcategoria' => 'Filé Mignon',
+        'nome' => 'À parmegiana',
+        'descricao' => '(Arroz e fritas)',
+        'preco' => 'R$ 54,00',
+        'imagem' => 'imagens/file-a-parmegiana.jpg'
+    ],
+    [
+        'id' => 17,
+        'categoria' => 'Carnes',
+        'subcategoria' => 'Filé Mignon',
+        'nome' => 'Com legumes',
+        'descricao' => '(Arroz e feijão)',
+        'preco' => 'R$ 53,00',
+        'imagem' => 'imagens/filemignon-legumes.jpg'
+    ],
+    [
+        'id' => 18,
+        'categoria' => 'Carnes',
+        'subcategoria' => 'Filé Mignon',
+        'nome' => 'Com queijo Minas e molho barbecue',
+        'descricao' => '(Arroz, provolone e milanesa)',
+        'preco' => 'R$ 66,00',
+        'imagem' => 'imagens/file-queijo.jpg'
+    ],
+    [
+        'id' => 19,
+        'categoria' => 'Carnes',
+        'subcategoria' => 'Filé Mignon',
+        'nome' => 'Medalhão ao molho gorgonzola e nozes',
+        'descricao' => '(Arroz, provolone e milanesa)',
+        'preco' => 'R$ 69,00',
+        'imagem' => 'imagens/file-gorgonzola.jpg'
+    ],
 
-        // --- Carnes - Picanha ---
-        [
-            'id' => 20,
-            'categoria' => 'Carnes',
-            'subcategoria' => 'Picanha',
-            'nome' => 'À brasileira',
-            'descricao' => '(Arroz, feijão, fritas, vinagrete e farofa)',
-            'preco' => 'R$ 51,00',
-            'imagem' => 'imagens/picanha-brasileira.jpg'
-        ],
-        [
-            'id' => 21,
-            'categoria' => 'Carnes',
-            'subcategoria' => 'Picanha',
-            'nome' => 'Com legumes',
-            'descricao' => '(Arroz e feijão)',
-            'preco' => 'R$ 53,00',
-            'imagem' => 'imagens/picanha-legumes.jpg'
-        ],
+    // Carnes - Picanha 
+    [
+        'id' => 20,
+        'categoria' => 'Carnes',
+        'subcategoria' => 'Picanha',
+        'nome' => 'À brasileira',
+        'descricao' => '(Arroz, feijão, fritas, vinagrete e farofa)',
+        'preco' => 'R$ 51,00',
+        'imagem' => 'imagens/picanha-brasileira.jpg'
+    ],
+    [
+        'id' => 21,
+        'categoria' => 'Carnes',
+        'subcategoria' => 'Picanha',
+        'nome' => 'Com legumes',
+        'descricao' => '(Arroz e feijão)',
+        'preco' => 'R$ 53,00',
+        'imagem' => 'imagens/picanha-legumes.jpg'
+    ],
 
-        // --- Especial da Casa ---
-        [
-            'id' => 22,
-            'categoria' => 'Especial da Casa',
-            'nome' => 'Costelinha ao molho barbecue',
-            'descricao' => '(Arroz e fritas)',
-            'preco' => 'R$ 43,00',
-            'imagem' => 'imagens/costelinha-frias-arroz.jpg'
-        ],
+    //  Massas 
+    [
+        'id' => 22,
+        'categoria' => 'Massas',
+        'nome' => 'Talharim ao molho branco',
+        'descricao' => '',
+        'preco' => 'R$ 32,00',
+        'imagem' => 'imagens/talharim-molho.png'
+    ],
+    [
+        'id' => 23,
+        'categoria' => 'Massas',
+        'nome' => 'Talharim ao molho sugo',
+        'descricao' => '',
+        'preco' => 'R$ 32,00',
+        'imagem' => 'imagens/talharim-ao-sugo.jpg'
+    ],
 
-        // --- Massas ---
-        [
-            'id' => 23,
-            'categoria' => 'Massas',
-            'nome' => 'Talharim ao molho branco',
-            'descricao' => '',
-            'preco' => 'R$ 32,00',
-            'imagem' => 'imagens/talharim-molho.png'
-        ],
-        [
-            'id' => 24,
-            'categoria' => 'Massas',
-            'nome' => 'Talharim ao molho sugo',
-            'descricao' => '',
-            'preco' => 'R$ 32,00',
-            'imagem' => 'imagens/talharim-ao-sugo.jpg'
-        ]
-    ];
-    ?>
+    //  Especial da Casa 
+    [
+        'id' => 24,
+        'categoria' => 'Especial da Casa',
+        'nome' => 'Costelinha ao molho barbecue',
+        'descricao' => '(Arroz e fritas)',
+        'preco' => 'R$ 43,00',
+        'imagem' => 'imagens/costelinha-frias-arroz.jpg'
+    ]
+];
+?>
 
     <header class="hero">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -271,8 +271,42 @@
                 </div>
             </div>
         </nav>
+
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="imagens/slide1.jpg" class="d-block w-100 hero-carousel-img" alt="Ambiente do Restaurante 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="imagens/slide2.jpeg" class="d-block w-100 hero-carousel-img" alt="Prato Especial">
+                </div>
+                <div class="carousel-item">
+                    <img src="imagens/slide3.jpg" class="d-block w-100 hero-carousel-img" alt="Ambiente do Restaurante 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="imagens/slide4.jpg" class="d-block w-100 hero-carousel-img" alt="Outro Prato/Ambiente">
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
         <div class="hero-content">
-            <h1>Venha viver uma experiência gastronômica</h1>
+            <h1>É melhor ir conhecer o Ipiranga</h1>
             <p>O melhor da culinária com sabor e elegância</p>
             <a href="#menu" class="btn btn-primary btn-lg">Ver Cardápio</a>
         </div>
@@ -311,11 +345,10 @@
                             <div class="carousel-item <?= $isActive ?>">
                                 <div class="row justify-content-center g-4">
                                     <?php
-                                    // Primeiro card do par
                                     $item1 = $subItems[$i];
                                     ?>
                                     <div class="col-12 col-md-6 d-flex justify-content-center">
-                                        <div class="card h-100 shadow-sm w-100 carousel-card-item">
+                                        <div class="card h-100 w-100 carousel-card-item">
                                             <img src="<?= $item1['imagem'] ?>" class="card-img-top" alt="<?= $item1['nome'] ?>" />
                                             <div class="card-body">
                                                 <h3 class="card-title"><?= $item1['nome'] ?></h3>
@@ -328,12 +361,11 @@
                                     </div>
 
                                     <?php
-                                    // Segundo card do par (se existir)
                                     if (isset($subItems[$i + 1])) :
                                         $item2 = $subItems[$i + 1];
                                     ?>
                                         <div class="col-12 col-md-6 d-flex justify-content-center">
-                                            <div class="card h-100 shadow-sm w-100 carousel-card-item">
+                                            <div class="card h-100 w-100 carousel-card-item">
                                                 <img src="<?= $item2['imagem'] ?>" class="card-img-top" alt="<?= $item2['nome'] ?>" />
                                                 <div class="card-body">
                                                     <h3 class="card-title"><?= $item2['nome'] ?></h3>
@@ -350,7 +382,8 @@
                         <?php endfor; ?>
                     </div>
 
-                    <?php if (count($subItems) > 2) : // Mostrar controles apenas se houver mais de 2 itens na subcategoria ?>
+                    <?php if (count($subItems) > 2) :  
+                    ?>
                         <button class="carousel-control-prev" type="button" data-bs-target="#<?= strtolower(str_replace(' ', '-', $categoryName)) ?>-carousel<?= ($subCategoryName !== 'default' ? '-' . strtolower(str_replace(' ', '-', $subCategoryName)) : '') ?>" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
@@ -362,8 +395,8 @@
                     <?php endif; ?>
                 </div>
         <?php
-            endforeach; // Fim do foreach para subcategorias
-        endforeach; // Fim do foreach para categorias
+            endforeach; 
+        endforeach; 
         ?>
     </section>
 
@@ -387,7 +420,7 @@
                     <i class="fa-solid fa-phone"></i>
                 </a>
             </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.702758153406!2d-46.602287224213945!3d-23.578687262071988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5ba8516ee64f%3A0x94f1c1f54460f38d!2sR.%20da%20Imprensa%2C%20310%20-%20Ipiranga%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004265-000!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.974591461946!2d-46.60835942544487!3d-23.570180462002764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c11867dd53%3A0xc4b7274092b7713d!2sR.%20da%20Imprensa%2C%20310%20-%20Ipiranga%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004265-000!5e0!3m2!1spt-BR!2sbr!4v1717616656730!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             <p>R. da Imprensa, 310 - Ipiranga, São Paulo - SP, 04265-000</p>
             <p>(11)3297-8305</p>
             <p class="mt-3 mb-0">© 2025 Cantinho do Ipiranga</p>
