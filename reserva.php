@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $mail->addReplyTo($email, $nome);
 
                 // Conteúdo do E-mail
-                $mail->isHTML(false); // fefine o formato do e-mail como texto puro
+                $mail->isHTML(false); // define o formato do e-mail como texto puro
                 $mail->Subject = "Nova Reserva no Cantinho do Ipiranga de: " . $nome;
 
                 // formata CPF para o e-mail
@@ -148,7 +148,7 @@ if (isset($_GET['status']) && $_GET['status'] == 'success') {
     <header class="hero-contact">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.php">
+                <a class="navbar-brand d-lg-none" href="index.php">
                     <img src="imagens/IpirangaLogo.png" alt="Cantinho do Ipiranga Logo" class="navbar-logo">
                 </a>
 
@@ -156,8 +156,8 @@ if (isset($_GET['status']) && $_GET['status'] == 'success') {
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="index.php">Início</a>
                         </li>
@@ -167,6 +167,13 @@ if (isset($_GET['status']) && $_GET['status'] == 'success') {
                         <li class="nav-item">
                             <a class="nav-link" href="index.php#menu">Cardápio</a>
                         </li>
+                    </ul>
+
+                    <a class="navbar-brand d-none d-lg-block mx-auto" href="index.php">
+                        <img src="imagens/IpirangaLogo.png" alt="Cantinho do Ipiranga Logo" class="navbar-logo-centered">
+                    </a>
+
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link" href="https://www.ifood.com.br/delivery/sao-paulo-sp/cantinho-do-ipiranga-vila-sao-jose-ipiranga/a7039bdc-b685-4b1a-86a8-cf2f926dd49f?utm_medium=share&fbclid=PAZXh0bgNhZW0CMTEAAae5ox62cJaiAVWLLPoua0yLLaAuo8qnJP9EufgvkSnFfvrefOerAjl36dJeYg_aem_doV1joC9SgTClAa35_YmQw" target="_blank">iFood</a>
                         </li>

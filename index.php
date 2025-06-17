@@ -33,7 +33,7 @@
             'categoria' => 'Pratos do Dia',
             'nome' => 'Terça-feira: Medalhão ao molho madeira com champignon',
             'descricao' => '1 pessoa',
-            'preco' => 'R$ 48,00',
+            'preco' => 'R$ 45,00',
             'imagem' => 'imagens/medalhao.jpg'
         ],
         [
@@ -152,7 +152,7 @@
             'subcategoria' => 'Filé Mignon',
             'nome' => 'À brasileira',
             'descricao' => '(Arroz, feijão, fritas, vinagrete e farofa)',
-            'preco' => 'R$ 51,00',
+            'preco' => 'R$ 5,00',
             'imagem' => 'imagens/filemignon-barasileira.jpg'
         ],
         [
@@ -245,7 +245,7 @@
     <header class="hero">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand d-lg-none" href="#">
                     <img src="imagens/IpirangaLogo.png" alt="Cantinho do Ipiranga Logo" class="navbar-logo">
                 </a>
 
@@ -253,8 +253,8 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Início</a>
                         </li>
@@ -264,6 +264,13 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#menu">Cardápio</a>
                         </li>
+                    </ul>
+
+                    <a class="navbar-brand d-none d-lg-block mx-auto" href="#">
+                        <img src="imagens/IpirangaLogo.png" alt="Cantinho do Ipiranga Logo" class="navbar-logo-centered">
+                    </a>
+
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link" href="https://www.ifood.com.br/delivery/sao-paulo-sp/cantinho-do-ipiranga-vila-sao-jose-ipiranga/a7039bdc-b685-4b1a-86a8-cf2f926dd49f?utm_medium=share&fbclid=PAZXh0bgNhZW0CMTEAAae5ox62cJaiAVWLLPoua0yLLaAuo8qnJP9EufgvkSnFfvrefOerAjl36dJeYg_aem_doV1joC9SgTClAa35_YmQw" target="_blank">iFood</a>
                         </li>
@@ -288,13 +295,13 @@
 
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="imagens/slide1.jpg" class="d-block w-100 hero-carousel-img" alt="Ambiente do Restaurante 1">
+                    <img src="imagens/slide3.jpg" class="d-block w-100 hero-carousel-img" alt="Ambiente do Restaurante 1">
                 </div>
                 <div class="carousel-item">
                     <img src="imagens/slide2.jpeg" class="d-block w-100 hero-carousel-img" alt="Prato Especial">
                 </div>
                 <div class="carousel-item">
-                    <img src="imagens/slide3.jpg" class="d-block w-100 hero-carousel-img" alt="Ambiente do Restaurante 2">
+                    <img src="imagens/slide1.jpg" class="d-block w-100 hero-carousel-img" alt="Ambiente do Restaurante 2">
                 </div>
                 <div class="carousel-item">
                     <img src="imagens/slide4.jpg" class="d-block w-100 hero-carousel-img" alt="Outro Prato/Ambiente">
