@@ -1,12 +1,12 @@
 :root {
     --primary-color: #a83232;
-    --dark: #030301; 
+    --dark: #030301;
     --light: #f8f8f8;
     --white: #fff;
     --shadow: rgba(0, 0, 0, 0.3);
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Open Sans', sans-serif;
-    --light-gray: #030301; 
+    --light-gray: #030301;
 }
 
 /* adicionado para corrigir o corte do título ao rolar para âncoras */
@@ -23,8 +23,8 @@ html {
 
 body {
     font-family: var(--font-body);
-    background-color: var(--dark); 
-    color: var(--dark); 
+    background-color: var(--dark);
+    color: var(--dark);
     overflow-x: hidden;
 }
 
@@ -33,16 +33,16 @@ a {
     text-decoration: none;
 }
 
-/* estilos do hero  */
+/* estilos do hero  */
 header.hero {
     position: relative;
     height: calc(75vh); 
-    margin-top: 0; 
+    margin-top: 0;
     color: var(--white);
     text-align: center;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center; 
+    justify-content: center; 
     overflow: hidden;
     padding-top: 0;
     padding-left: 0;
@@ -57,7 +57,7 @@ header.hero {
     width: 100%;
     height: 100%;
     z-index: 0;
-    background-color: var(--dark); 
+    background-color: var(--dark);
 }
 
 header.hero .carousel.slide {
@@ -87,13 +87,13 @@ header.hero::before {
     padding-top: 50px;
 }
 
-/* Botão "Ver Cardápio" e outros .btn-primary */
+/* Botão "Ver Cardápio" e outros .btn-primary - Estilo padrão para DESKTOP */
 .btn-primary {
     background-color: var(--primary-color) !important;
     border-color: var(--primary-color) !important;
     color: var(--white) !important;
-    padding: 0.75rem 2rem;
-    font-size: 1.2rem;
+    padding: 0.75rem 2rem; 
+    font-size: 1.2rem; 
     border-radius: 50px;
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
@@ -107,11 +107,11 @@ header.hero::before {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
 }
 
-/* estilo para o botão "Confirmar Reserva"  */
+/* estilo para o botão "Confirmar Reserva"  */
 .btn-reserva-form {
     background-color: #f6bc4b !important;
     border-color: #f6bc4b !important;
-    color: var(--dark) !important; 
+    color: var(--dark) !important;
     padding: 0.75rem 2rem;
     font-size: 1.2rem;
     border-radius: 50px;
@@ -123,7 +123,7 @@ header.hero::before {
 .btn-reserva-form:active {
     background-color: #e0a830 !important;
     border-color: #e0a830 !important;
-    color: var(--dark) !important; 
+    color: var(--dark) !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
 }
 
@@ -132,7 +132,7 @@ header.hero::before {
 .btn-reserva {
     display: inline-block;
     background-color: #f6bc4b !important;
-    color: var(--dark) !important; 
+    color: var(--dark) !important;
     border: 2px solid #f6bc4b !important;
     padding: 8px 20px !important;
     border-radius: 5px;
@@ -146,21 +146,44 @@ header.hero::before {
 .btn-reserva:hover {
     background-color: #e0a830 !important;
     border-color: #e0a830 !important;
-    color: var(--dark) !important; 
+    color: var(--dark) !important;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+@media (max-width: 767px) {
+    .hero {
+        min-height: auto !important;
+        height: auto !important;
+    }
+
+    .hero .carousel-item,
+    .hero .carousel-item img {
+        height: auto !important;
+        max-height: 300px;
+        object-fit: cover;
+    }
+
+    .hero-content {
+        margin-bottom: 10px !important;
+    }
+
+    #sobre-nos {
+        margin-top: 20px !important;
+        padding-top: 0 !important;
+    }
+}
+
 /* ajustes para o mobile, para o botão ficar visível e alinhado */
 @media (max-width: 991.98px) {
-    .btn-reserva {
+    .btn-reserva:not(.navbar-nav .btn-reserva) {
         margin-left: 0 !important;
         margin-top: 10px;
         text-align: center;
         padding: 10px 25px !important;
         display: block;
         width: fit-content;
-        float: right;
+        float: right; 
         clear: both;
         margin-right: 15px;
     }
@@ -174,7 +197,7 @@ header.hero::before {
 
 /* Estilo para o logo que aparece no mobile  */
 .navbar-logo {
-    height: 85px !important; 
+    height: 85px !important;
     width: auto !important;
     margin-right: 10px;
     border-radius: 5px;
@@ -183,41 +206,41 @@ header.hero::before {
 
 /* Estilo para o logo centralizado em desktop */
 .navbar-logo-centered {
-    height: 120px !important; 
+    height: 120px !important;
     width: auto !important;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Ajustes cruciais para a navbar e o logo centralizado** */
 .navbar.bg-dark {
-    background-color: var(--dark) !important; 
+    background-color: var(--dark) !important;
     z-index: 1030;
-    min-height: 120px; 
-    display: flex; 
-    align-items: center; 
+    min-height: 120px;
+    display: flex;
+    align-items: center;
 }
 
 /* Posicionamento do logo centralizado em telas grandes */
 @media (min-width: 992px) {
-    .navbar-brand.d-lg-block { 
-        position: absolute; 
+    .navbar-brand.d-lg-block {
+        position: absolute;
         left: 50%;
-        transform: translateX(-50%); 
-        z-index: 1040; 
+        transform: translateX(-50%);
+        z-index: 1040;
         padding: 0;
     }
 
     .navbar-nav .nav-link {
-        padding: 1.5rem 0; 
+        padding: 1.5rem 0;
     }
 }
 
 /* Garante que o logo padrão esteja visível em mobile */
 @media (max-width: 991.98px) {
-    .navbar-brand:not(.d-lg-block) { 
+    .navbar-brand:not(.d-lg-block) {
         display: block !important;
-        margin-left: 10px; 
+        margin-left: 10px;
     }
 }
 
@@ -243,7 +266,7 @@ header.hero::before {
 }
 
 .about-section {
-    background-color: var(--dark); 
+    background-color: var(--dark);
     color: var(--light);
     padding: 4rem 0;
 }
@@ -442,16 +465,16 @@ header.hero::before {
 }
 
 #menu .carousel.slide .carousel-control-prev {
-    left: -40px; /* Empurra para fora da borda esquerda do carrossel */
+    left: -40px; 
     right: auto;
 }
 
 #menu .carousel.slide .carousel-control-next {
-    right: -40px; /* Empurra para fora da borda direita do carrossel */
+    right: -40px; 
     left: auto;
 }
 
-/*  Ajuste o tamanho dos ícones das setas do carrossel de pratos, se necessário */
+/* Ajuste o tamanho dos ícones das setas do carrossel de pratos, se necessário */
 #menu .carousel.slide .carousel-control-prev-icon,
 #menu .carousel.slide .carousel-control-next-icon {
     width: 25px;
@@ -501,7 +524,7 @@ footer iframe {
 }
 
 footer.bg-dark {
-    background-color: #030301 !important; 
+    background-color: #030301 !important;
 }
 
 /* Estilo específico para o cabeçalho da página de contato/reserva */
@@ -509,7 +532,7 @@ header.hero-contact {
     position: relative;
     height: auto;
     min-height: 180px;
-    background-color: var(--dark); /* Usa a nova cor */
+    background-color: var(--dark); 
     color: var(--white);
     text-align: center;
     display: flex;
@@ -532,7 +555,7 @@ header.hero-contact .hero-content {
 /* Estilos dos campos de formulário (input, textarea, select) */
 .form-control {
     color: #f6bc4b !important;
-    background-color: var(--light-gray); 
+    background-color: var(--light-gray);
     border: 1px solid #555555;
 }
 
@@ -585,50 +608,56 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 /* Responsividade Geral */
 @media (max-width: 991.98px) {
     html {
-        scroll-padding-top: 85px; 
+        scroll-padding-top: 85px;
     }
 
     header.hero-contact {
         padding-top: 100px;
     }
 
-    /* Responsividade para o hero principal em Mobile */
+    /* Responsividade para o hero principal em mobile  */
     header.hero {
-        margin-top: 85px; 
-        height: calc(80vh - 85px);
+        margin-top: 85px;
+        height: 70vh; 
+        min-height: 400px; 
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: center; 
         align-items: center;
         padding: 0;
     }
 
     .hero-content {
         text-align: center;
+        padding-top: 6rem; 
+        padding-bottom: 2.5rem;
+        margin-top: 0;
     }
 
+    /* Ajustes para fonte do título, texto e tamanho do botão mobile */
     .hero-content h1 {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
+        font-size: 2.1rem; 
+        margin-bottom: 0.8rem;
+        line-height: 1.2;
     }
 
     .hero-content p {
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
+        font-size: 1.25rem; 
+        margin-bottom: 1.8rem; 
     }
 
     .btn-primary {
-        font-size: 1rem;
-        padding: 0.6rem 1.5rem;
+        font-size: 1.15rem; 
+        padding: 0.85rem 2.1rem; 
     }
 
-    /* Setas do carrossel (tanto do hero quanto do menu) já são ocultadas pelo Bootstrap em telas pequenas */
+    /* Setas do carrossel já são ocultadas pelo Bootstrap em telas pequenas */
     .carousel-control-prev,
     .carousel-control-next {
         display: none !important;
     }
 
-    /* Oculta os indicadores do carrossel (os "pontinhos") em mobile */
+    /* Oculta os indicadores do carrossel  em mobile */
     .carousel-indicators {
         display: none !important;
     }
@@ -649,7 +678,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
         font-size: 2.5rem;
     }
 
-    /* Responsividade para o texto e imagem da seção Sobre Nós */
+    /* Responsividade para o texto e imagem da seção Sobre */
     .about-section h2 {
         font-size: 2.5rem;
     }
@@ -667,14 +696,93 @@ input[type="time"]::-webkit-calendar-picker-indicator {
         max-height: 400px;
         object-fit: contain;
     }
+
+    .about-section {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+
+    /* REGRAS PARA CENTRALIZAR O MENU HAMBÚRGUER E AJUSTAR A POSIÇÃO */
+    .navbar-collapse {
+        background-color: rgba(3, 3, 1, 0.9); 
+        position: absolute;
+        top: 110px; 
+        left: 0;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center; 
+        padding: 1.5rem 0; 
+        overflow-y: auto;
+    }
+
+    .navbar-nav {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100%;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: auto;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .navbar-nav .nav-link {
+        margin: 0 !important;
+        padding: 0.6rem 0 !important;
+        font-size: 1.2rem;
+        display: inline-block;
+    }
+
+    .navbar-nav .btn-reserva {
+        display: inline-block !important;
+        width: auto !important;
+        margin-top: 1rem;
+        padding: 8px 20px !important;
+        font-size: 1rem !important;
+    }
+
+    .navbar-toggler {
+        z-index: 1040;
+    }
 }
 
 @media (max-width: 767.98px) {
-    .about-section {
-        padding: 1.5rem 0;
-    }
     .about-section p {
         text-align: left;
+    }
+
+    /* AJUSTES PARA O CONTEÚDO DO HERO EM TELAS MENORES */
+    header.hero {
+        height: 75vh; 
+        min-height: 380px; 
+    }
+
+    header.hero .hero-content {
+        padding-top: 4.5rem; 
+        padding-bottom: 1.5rem;
+    }
+
+    header.hero .hero-content h1 {
+        font-size: 1.7rem;
+        margin-bottom: 0.5rem;
+    }
+    header.hero .hero-content p {
+        font-size: 1.05rem;
+        margin-bottom: 1.5rem;
+    }
+    header.hero .btn-primary {
+        font-size: 0.95rem;
+        padding: 0.65rem 1.6rem;
     }
 }
 
@@ -698,25 +806,58 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     #menu h2 {
         font-size: 2rem;
     }
-}
 
-@media (max-width: 991.98px) {
-    .navbar-collapse {
-        justify-content: flex-end;
+    /* AJUSTES ADICIONAIS PARA O CONTEÚDO DO HERO EM TELAS MUITO PEQUENAS */
+    header.hero {
+        height: 80vh; 
+        min-height: 350px; 
     }
-    .navbar-nav .nav-link {
-        margin-left: 0;
-        text-align: right;
-        padding-right: 15px;
+    
+    header.hero .hero-content {
+        padding-top: 3.5rem; 
+        padding-bottom: 1rem;
+    }
+
+    header.hero .hero-content h1 {
+        font-size: 1.5rem;
+    }
+    header.hero .hero-content p {
+        font-size: 0.88rem;
+        margin-bottom: 1.1rem;
+    }
+    header.hero .btn-primary {
+        font-size: 0.82rem;
+        padding: 0.55rem 1.3rem;
     }
 }
 
 /* Ajustes de espaçamento para os links da navbar em telas maiores */
 @media (min-width: 992px) {
     .navbar-nav .nav-item {
-        margin-left: 2rem;
+        margin-left: 0.5rem; 
+        margin-right: 0.5rem; 
     }
     .navbar-nav .nav-item:first-child {
-        margin-left: 0;
+        margin-left: 0; 
+    }
+    .navbar-nav .nav-item:last-child {
+        margin-right: 0; 
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Botão "Ver Cardápio" no desktop  */
+    .btn-primary {
+        padding: 0.75rem 2rem;
+        font-size: 1.2rem;
     }
 }

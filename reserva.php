@@ -162,7 +162,7 @@ if (isset($_GET['status']) && $_GET['status'] == 'success') {
                             <a class="nav-link" aria-current="page" href="index.php">Início</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php#sobre-nos">Sobre Nós</a>
+                            <a class="nav-link" href="index.php#sobre-nos">Sobre</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="index.php#menu">Cardápio</a>
@@ -253,11 +253,9 @@ if (isset($_GET['status']) && $_GET['status'] == 'success') {
                 <a href="https://www.facebook.com/cantinhodoipiranga" target="_blank" class="text-white mx-2">
                     <i class="fa-brands fa-facebook-f"></i>
                 </a>
-                <a href="tel:+55XXYYYYZZZZZ" class="text-white mx-2">
-                    <i class="fa-solid fa-phone"></i>
-                </a>
+                
             </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4375.357215114477!2d-46.61933132388312!3d-23.588314362584498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5bdc9713efa7%3A0x2cebae0eeb7ea658!2sCantinho%20do%20Ipiranga!5e1!3m2!1spt-BR!2sbr!4v1749482284095!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14625.85562477854!2d-46.62220665177225!3d-23.58769000489702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5bdc9713efa7%3A0x2cebae0eeb7ea658!2sCantinho%20do%20Ipiranga!5e0!3m2!1spt-BR!2sbr!4v1750456162976!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             <p>R. da Imprensa, 310 - Ipiranga, São Paulo - SP, 04265-000</p>
             <p>(11)3297-8305</p>
             <p class="mt-3 mb-0">© 2025 Cantinho do Ipiranga</p>

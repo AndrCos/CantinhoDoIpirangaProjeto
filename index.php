@@ -152,7 +152,7 @@
             'subcategoria' => 'Filé Mignon',
             'nome' => 'À brasileira',
             'descricao' => '(Arroz, feijão, fritas, vinagrete e farofa)',
-            'preco' => 'R$ 5,00',
+            'preco' => 'R$ 55,00',
             'imagem' => 'imagens/filemignon-barasileira.jpg'
         ],
         [
@@ -259,7 +259,7 @@
                             <a class="nav-link active" aria-current="page" href="#">Início</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#sobre-nos">Sobre Nós</a>
+                            <a class="nav-link" href="#sobre-nos">Sobre</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#menu">Cardápio</a>
@@ -319,7 +319,7 @@
         </div>
 
         <div class="hero-content">
-            <h1>É melhor ir conhecer o Ipiranga</h1>
+            <h1>É melhor ir conhecer o Ipiranga!</h1>
             <p>O melhor da culinária com sabor e elegância</p>
             <a href="#menu" class="btn btn-primary btn-lg">Ver Cardápio</a>
         </div>
@@ -330,13 +330,13 @@
             <h2 class="text-center mb-4">Cantinho do Ipiranga: Um Sonho de Família e Sabor</h2>
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12">
-                    <p>Nossa história é um testemunho de sonhos e dedicação, nascida da visão de **Raimundo Severino de Lima**. Aos 17 anos, vindo de uma vida simples na Paraíba, Raimundo chegou a São Paulo em busca de um futuro mais digno. Ele encontrou sua verdadeira paixão no serviço, migrando do trabalho em fábricas para a arte de acolher e servir como garçom.</p>
+                    <p>Nossa história é um testemunho de sonhos e dedicação, nascida da visão de Raimundo Severino de Lima. Aos 17 anos, vindo de uma vida simples na Paraíba, Raimundo chegou a São Paulo em busca de um futuro mais digno. Ele encontrou sua verdadeira paixão no serviço, migrando do trabalho em fábricas para a arte de acolher e servir como garçom.</p>
 
-                    <p>Anos de aprimoramento e muito aprendizado culminaram em uma marcante trajetória de 17 anos no prestigiado **Bourbon Street Music Club**, onde Raimundo ascendeu de garçom a Maître. Foi nesse ambiente de excelência que ele percebeu: seu próximo passo seria realizar o sonho de ter seu próprio negócio, onde toda a sua paixão pela hospitalidade pudesse florescer livremente.</p>
+                    <p>Anos de aprimoramento e muito aprendizado culminaram em uma marcante trajetória de 17 anos no prestigiado Bourbon Street Music Club, onde Raimundo ascendeu de garçom a Maître. Foi nesse ambiente de excelência que ele percebeu: seu próximo passo seria realizar o sonho de ter seu próprio negócio, onde toda a sua paixão pela hospitalidade pudesse florescer livremente.</p>
 
-                    <p>Em sua jornada, conheceu **Kátia Regina**, de Minas Gerais, a parceira que, ao seu lado, construiria uma família e um futuro. Dessa união, nasceram Alan, André e Nayara, os filhos que hoje carregam a história e o legado familiar.</p>
+                    <p>Em sua jornada, conheceu Kátia Regina, de Minas Gerais, a parceira que, ao seu lado, construiria uma família e um futuro. Dessa união, nasceram Alan, André e Nayara, os filhos que hoje carregam a história e o legado familiar.</p>
 
-                    <p>Assim, há 17 anos, nasceu o **Cantinho do Ipiranga**. Mais que um restaurante, é a concretização do sonho de Raimundo, um espaço onde a tradição, o carinho e o sabor se encontram. Hoje, com a nova geração ao seu lado, o Cantinho do Ipiranga continua escrevendo sua linda história, servindo com o coração e mantendo viva a essência de uma família que transformou um sonho em um lar para todos.</p>
+                    <p>Assim, há 17 anos, nasceu o Cantinho do Ipiranga. Mais que um restaurante, é a concretização do sonho de Raimundo, um espaço onde a tradição, o carinho e o sabor se encontram. Hoje, com a nova geração ao seu lado, o Cantinho do Ipiranga continua escrevendo sua linda história, servindo com o coração e mantendo viva a essência de uma família que transformou um sonho em um lar para todos.</p>
 
                     <p class="text-center mt-5">Venha nos visitar e saborear essa história!</p>
                 </div>
@@ -453,11 +453,9 @@
                 <a href="https://www.facebook.com/cantinhodoipiranga" target="_blank" class="text-white mx-2">
                     <i class="fa-brands fa-facebook-f"></i>
                 </a>
-                <a href="tel:+55XXYYYYZZZZZ" class="text-white mx-2">
-                    <i class="fa-solid fa-phone"></i>
-                </a>
+                
             </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.452601053155!2d-46.60467728447817!3d-23.58552196859871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5ba8f0b09489%3A0x6b6e4e0d3c0a5f0e!2sR.%20da%20Imprensa%2C%20310%20-%20Ipiranga%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004265-000!5e0!3m2!1spt-BR!2sbr!4v1678912345678!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14625.85562477854!2d-46.62220665177225!3d-23.58769000489702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5bdc9713efa7%3A0x2cebae0eeb7ea658!2sCantinho%20do%20Ipiranga!5e0!3m2!1spt-BR!2sbr!4v1750456162976!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             <p>R. da Imprensa, 310 - Ipiranga, São Paulo - SP, 04265-000</p>
             <p>(11)3297-8305</p>
             <p class="mt-3 mb-0">© 2025 Cantinho do Ipiranga</p>
